@@ -213,6 +213,10 @@
         <source>We detected your browser language, you can change in in top right corner</source>
         <target>Ми визначили мову вашого браузера, але ви можете змінити мову в меню праворуч</target>
       </trans-unit>
+      <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
+        <source>Site use cookies and other essential web technologies.</source>
+        <target>Сайт використовує cooki та інші основні веб технології</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
