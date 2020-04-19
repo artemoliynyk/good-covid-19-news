@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+
+{% block body %}
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">{% trans %}Help project{% endtrans %}</h1>
+
+        <p class="lead">
+            <b>{% trans %}Hi! I believe you can help the project.{% endtrans %}</b>
+            <br>
+            {% trans %}If you are PHP developer, designer, translator or speak multiple languages – you can help me!{% endtrans %}
+        </p>
+
+        <h3>{% trans %}How can I help?{% endtrans %}</h3>
+        <p class="lead">
+            {% trans %}You can help with one of the following things:{% endtrans %}
+        </p>
+        <ul class="lead">
+            <li>{% trans %}translate project and verify translations{% endtrans %}</li>
+            <li>{% trans %}create new features{% endtrans %}</li>
+            <li>{% trans %}fix code{% endtrans %}</li>
+            <li>{% trans %}fix site layout{% endtrans %}</li>
+        </ul>
+        <br>
+
+        <h3>{% trans %}Get onboard!{% endtrans %}</h3>
+        <p class="lead">
+            {% trans %}Ready to contribute? – Check out project's{% endtrans %} <a href="https://github.com/artemoliynyk/good-covid-19-news">GitHub</a>
+            <br>
+            {% trans %}Want to share ideas or discuss projet? – Join chat chanel on{% endtrans %} <a href="https://good-covid-19-news.slack.com/">Slack</a>
+            <br>
+        </p>
+    </main>
+    </div>
+{% endblock %}

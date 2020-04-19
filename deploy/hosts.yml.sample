@@ -1,0 +1,16 @@
+
+host:
+    hostname: example.com
+    user: unix_user
+    port: 22
+    configFile: ~/.ssh/config
+    identityFile: ~/.ssh/id_rsa
+    forwardAgent: true
+    multiplexing: true
+    sshOptions:
+        UserKnownHostsFile: /dev/null
+        StrictHostKeyChecking: no
+    stage: production
+    roles:
+        - app
+    deploy_path: local_path

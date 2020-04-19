@@ -1,0 +1,2 @@
+GET http://{{server_host}}/json/recovered-daily
+Accept: application/jsons

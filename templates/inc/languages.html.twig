@@ -1,0 +1,15 @@
+{% trans_default_domain 'languages' %}
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% trans %}Language{% endtrans %} ({{ app.request.getLocale() }})
+
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% for lang in supported_locales %}
+            <a class="dropdown-item" href="{{ url('index', {'_locale': lang}) }}">
+                {{ lang|trans() }} ({{ lang }})
+            </a>
+        {% endfor %}
+    </div>
+</li>

@@ -1,0 +1,2 @@
+GET http://{{server_host}}/json/active-population
+Accept: application/jsons

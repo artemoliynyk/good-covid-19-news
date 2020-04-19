@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('dashboard') }}
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+
+            {% if last_record is not null %}
+                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data for {date}{% endtrans %}</h3>
+
+                <hr>
+
+                <div class="row mb-5">
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card text-center ">
+                            <div class="card-header bg-warning text-dark"><b>{% trans %}Active cases{% endtrans %}</b></div>
+                            <div class="card-body">
+                                <h4 class="font-weight-bold text-warning">
+                                    {{ last_record.active|number }}
+                                </h4>
+                                <small class="badge badge-info" data-toggle="tooltip" data-placement="bottom"
+                                       title="{% trans with {'{population}': world_population|number} %}Estimated world population on 2020 – {population}{% endtrans %}">
+                                    {% trans with {'{percent}': percent } %}it's just {percent}% of the world population{% endtrans %}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card text-center ">
+                            <div class="card-header bg-primary text-dark"><b>{% trans %}Total recovered{% endtrans %}</b></div>
+                            <div class="card-body">
+                                <h4 class="font-weight-bold text-primary">
+                                    {{ last_record.recovered|number }}
+                                </h4>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card text-center ">
+                            <div class="card-header bg-info text-dark"><b>{% trans %}New recovered{% endtrans %}</b></div>
+                            <div class="card-body">
+                                <h4 class="font-weight-bold text-info">
+                                    +{{ last_record.newRecovered|number }}
+                                </h4>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-weight-bold text-center">{% trans %}Daily change{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
+                        <div class="card text-center">
+                            <div class="card-header bg-dark text-white"><b>{% trans %}New cases{% endtrans %}</b></div>
+                            <div class="card-body">
+                                {% if 0 > last_record.dailyChange.new %}
+                                    <h4 class="text-success">- {{ last_record.dailyChange.newValue }}</h4>
+                                    <div class="badge badge-primary">{{ last_record.newCases }} vs. {{ prev_record.newCases }}</div>
+                                    <br>
+                                    <div class="mt-1 badge badge-info">{% trans %}Less new cases than on{% endtrans %}<br>{{ prev_record_date }}</div>
+                                {% else %}
+                                    {% trans %}No positive dynamic{% endtrans %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
+                        <div class="card text-center">
+                            <div class="card-header bg-success text-dark"><b>{% trans %}Daily recovered{% endtrans %}</b></div>
+                            <div class="card-body">
+                                {% if 0 < last_record.dailyChange.recovered %}
+                                    <h4 class="text-success">+ {{ last_record.dailyChange.recoveredValue }}</h4>
+                                    <div class="badge badge-primary">{{ last_record.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
+                                    <br>
+                                    <div class="mt-1 badge badge-info">{% trans %}More recovered than on{% endtrans %}<br>{{ prev_record_date }}</div>
+                                {% else %}
+                                    {% trans %}No positive dynamic{% endtrans %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
+                        <div class="card text-center">
+                            <div class="card-header bg-warning text-dark"><b>{% trans %}Serious cases{% endtrans %}</b></div>
+                            <div class="card-body">
+                                {% if 0 > last_record.dailyChange.serious %}
+                                    <h4 class="text-success">- {{ last_record.dailyChange.seriousValue }}</h4>
+                                    <div class="badge badge-primary">{{ last_record.serious }} vs. {{ prev_record.serious }}</div>
+                                    <br>
+                                    <div class="mt-1 badge badge-info">{% trans %}Less serious than on{% endtrans %}<br>{{ prev_record_date }}</div>
+                                {% else %}
+                                    {% trans %}No positive dynamic{% endtrans %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
+                        <div class="card text-center">
+                            <div class="card-header bg-danger text-white"><b>{% trans %}Death{% endtrans %}</b></div>
+                            <div class="card-body">
+                                {% if 0 > last_record.dailyChange.deaths %}
+                                    <h4 class="text-success">- {{ last_record.dailyChange.deathsValue }}</h4>
+                                    <div class="badge badge-primary">{{ last_record.newDeaths }} vs. {{ prev_record.newDeaths }}</div>
+                                    <br>
+                                    <div class="mt-1 badge badge-info">{% trans %}Less died than on{% endtrans %}<br>{{ prev_record_date }}</div>
+                                {% else %}
+                                    {% trans %}No positive dynamic{% endtrans %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="font-weight-bold text-center">{% trans %}Recovered total{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <canvas id="chart-recovered" height="180" data-url="{{ url('json_recovered') }}"></canvas>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4 class="font-weight-bold text-center">{% trans %}Recovered by day{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_recovered_daily') }}"></canvas>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4 class="font-weight-bold text-center">{% trans %}Active cases{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <canvas id="chart-active" height="180" data-url="{{ url('json_active_cases') }}"></canvas>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4 class="font-weight-bold text-center">{% trans %}New cases by day{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-12 col-lg-10 offset-lg-1">
+                        <canvas id="chart-new-daily" height="180" data-url="{{ url('json_new_daily') }}"></canvas>
+                    </div>
+                </div>
+            {% else %}
+                <div class="alert alert-danger text-center">{% trans %}Sorry, something goes wrong with the site{% endtrans %}</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

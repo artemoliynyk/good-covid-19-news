@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Artem Oliynyk">
+    <meta name="description" content="Positive statistic about COVID-19 pandemic">
+
+
+    <title>{{ app_name }} - {% block title %}{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    {% block style %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock style %}
+</head>
+<body>
+<header class="mb-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('index') }}">{{ app_name }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav mr-auto text-right">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('index') }}">{% trans %}Dashboard{% endtrans %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('static_disclaimer') }}">{% trans %}Disclaimer{% endtrans %}</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="nab-about" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% trans %}About{% endtrans %}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="nab-about">
+                            <a class="dropdown-item" href="{{ url('static_about') }}">{% trans %}About{% endtrans %}</a>
+                            <a class="dropdown-item" href="{{ url('static_help') }}">{% trans %}Help project{% endtrans %}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="https://github.com/artemoliynyk/good-covid-19-news">GitHub</a>
+                            <a class="dropdown-item" href="https://good-covid-19-news.slack.com/">Slack</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto text-right">
+                    <li class="nav-item d-sm-none">
+                        <a class="nav-link active">|</a>
+                    </li>
+
+                    {% include 'inc/languages.html.twig' %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="container">
+    {% include 'inc/flash.html.twig' %}
+    {% block body %}{% endblock %}
+</main>
+
+<footer class="footer mt-4">
+    <div class="container">
+        <span class="text-muted"><a href="https://artemoliynyk.com/">Artem Oliynyk</a> &copy;  Copyright {{ "now"|date("Y") }}</span>
+    </div>
+</footer>
+
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_ID }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '{{ GOOGLE_ANALYTICS_ID }}');
+</script>
+</body>
+</html>

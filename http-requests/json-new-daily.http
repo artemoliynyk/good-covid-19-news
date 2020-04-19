@@ -1,0 +1,2 @@
+GET http://{{server_host}}/json/new-daily
+Accept: application/jsons

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disclaimer{% endblock %}
+
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+
+            <div class="jumbotron">
+                <h1 class="display-4">Important note</h1>
+                <p class="lead">
+                    {% trans %}All information on this site obtained from a free public API{% endtrans %}
+                    <a target="_blank" rel="nofollow" href="https://rapidapi.com/astsiatsko/api/coronavirus-monitor">
+                        {% trans %}RapidAPI Coronavirus monitor{% endtrans %}
+                    </a>
+                    <br>
+                    {% trans %}This is not an official WHO/CDC data.{% endtrans %}
+                    <br>
+                    <br>
+                    <b>{% trans %}People can still get infected and die every day! Keep safe and stay home!{% endtrans %}</b>
+                    <br>
+                </p>
+                <hr class="my-4">
+                <p>
+
+                    <a href="https://artemoliynyk.com/#contact">{% trans %}Contact me{% endtrans %}</a>
+                </p>
+                <a class="btn btn-primary btn-lg" href="{{ url('index') }}" role="button">{% trans %}Go to dashboard{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About{% endblock %}
+
+
+{% block body %}
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">{% trans %}About project{% endtrans %}</h1>
+
+        <p class="lead">
+            {% trans %}Hello, my name is Artem and I'm a web developer.{% endtrans %}
+            <br>
+            {% trans %}As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.{% endtrans %}
+        </p>
+        <p class="lead">
+            {% trans %}I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.{% endtrans %}
+            <br>
+            {% trans %}During this hard and scary time it would be great to focus on something good, even if it is not much good.{% endtrans %}
+        </p>
+        <p class="lead">
+            {% trans %}You can help me to make site better, please check{% endtrans %}
+            <a href="{{ url('static_help') }}">{% trans %}Help us page{% endtrans %}</a>
+        </p>
+
+        <img src="{{ asset('static/img/good-news.jpg') }}" alt="Good News!" />
+    </main>
+    </div>
+{% endblock %}
