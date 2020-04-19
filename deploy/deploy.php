@@ -12,7 +12,7 @@ set('application', function () {
 });
 
 // Project repository
-set('repository', 'git@github.com:artemoliynyk/good-covid-19-news.git');
+set('repository', 'https://github.com/artemoliynyk/good-covid-19-news.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
