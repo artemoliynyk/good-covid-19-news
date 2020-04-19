@@ -19,6 +19,25 @@ This project is intentionally Open Source.
 
 You can help it by contributing: translation, code, fixes, new features, etc.
 
+### Local deploy
+After project cloned – perform typical deployment steps for Symfony project.
+You can check `deploy/deploy.php` tasks to check what actions are performed durin deploy.
+
+**General deployment steps:**
+* clone
+* create DB
+* Obtain RapidAPI key for [Coronavirus Monitor API](https://rapidapi.com/astsiatsko/api/coronavirus-monitor)
+* create `.evn.local` file
+* setup database connection parameters and API key in `.env.local`
+* install resources: `yarn install`
+* compile resources: `yarn encore dev`  
+* install vendors: `composer install`
+* run migrations: `bin/console doctrine:migrations:migrate`
+
+**Data manipulation steps:**
+* dump countries data `bin/console app:collect:countries`
+* check statistic steps `bin/console app:stats:calculate --help`
+
 ### "Help wanted" issues
 Please check the issue page for issues with "help wanted" label. This is the most important issues for project.
 
