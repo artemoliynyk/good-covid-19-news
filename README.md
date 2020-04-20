@@ -10,7 +10,7 @@ We are all affected even if not infected and virus' impact on global society are
 But we often neglect the positive dynamic and tent to focus on the bad news only.
 
 ### Technical details
-Project build on Symfony web framework version 5.1 with PHP 7.2.
+Project build on Symfony web framework version 5.0 with PHP 7.2.
 
 Multi-language support implemented with `.xlf` translation. 
 
