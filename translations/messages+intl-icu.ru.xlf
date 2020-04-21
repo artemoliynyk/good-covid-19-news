@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="ru" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="z4hixfA" resname="Active cases">
+        <source>Active cases</source>
+        <target>__Active cases</target>
+      </trans-unit>
+      <trans-unit id="ZxFBiCc" resname="World population">
+        <source>World population</source>
+        <target>__World population</target>
+      </trans-unit>
+      <trans-unit id="N84Kke4" resname="Recovered">
+        <source>Recovered</source>
+        <target>__Recovered</target>
+      </trans-unit>
+      <trans-unit id="SrCelQa" resname="New infected">
+        <source>New infected</source>
+        <target>__New infected</target>
+      </trans-unit>
+      <trans-unit id="waCGJlY" resname="New recovered">
+        <source>New recovered</source>
+        <target>__New recovered</target>
+      </trans-unit>
+      <trans-unit id="E72_T65" resname="We detected your browser language, you can change in in top right corner">
+        <source>We detected your browser language, you can change in in top right corner</source>
+        <target>__We detected your browser language, you can change in in top right corner</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>__Dashboard</target>
+      </trans-unit>
+      <trans-unit id="Epxnj85" resname="Disclaimer">
+        <source>Disclaimer</source>
+        <target>__Disclaimer</target>
+      </trans-unit>
+      <trans-unit id="Tvyg0Qx" resname="About">
+        <source>About</source>
+        <target>__About</target>
+      </trans-unit>
+      <trans-unit id="60ezuaD" resname="Help project">
+        <source>Help project</source>
+        <target>__Help project</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>__Language</target>
+      </trans-unit>
+      <trans-unit id="emWLRn4" resname="Hi! I believe you can help the project.">
+        <source>Hi! I believe you can help the project.</source>
+        <target>__Hi! I believe you can help the project.</target>
+      </trans-unit>
+      <trans-unit id="bqDg_Ae" resname="If you are PHP developer, designer, translator or speak multiple languages – you can help me!">
+        <source>If you are PHP developer, designer, translator or speak multiple languages – you can help me!</source>
+        <target>__If you are PHP developer, designer, translator or speak multiple languages – you can help me!</target>
+      </trans-unit>
+      <trans-unit id="TTXqIbM" resname="How can I help?">
+        <source>How can I help?</source>
+        <target>__How can I help?</target>
+      </trans-unit>
+      <trans-unit id="Q3a7R2K" resname="You can help with one of the following things:">
+        <source>You can help with one of the following things:</source>
+        <target>__You can help with one of the following things:</target>
+      </trans-unit>
+      <trans-unit id="eCpMwRu" resname="translate project and verify translations">
+        <source>translate project and verify translations</source>
+        <target>__translate project and verify translations</target>
+      </trans-unit>
+      <trans-unit id="1xGbcgw" resname="create new features">
+        <source>create new features</source>
+        <target>__create new features</target>
+      </trans-unit>
+      <trans-unit id="ZWp1IZg" resname="fix code">
+        <source>fix code</source>
+        <target>__fix code</target>
+      </trans-unit>
+      <trans-unit id="AuQ2Z6A" resname="fix site layout">
+        <source>fix site layout</source>
+        <target>__fix site layout</target>
+      </trans-unit>
+      <trans-unit id="pmBb.zo" resname="Get onboard!">
+        <source>Get onboard!</source>
+        <target>__Get onboard!</target>
+      </trans-unit>
+      <trans-unit id="J.qsUJ6" resname="Ready to contribute? – Check out project's">
+        <source>Ready to contribute? – Check out project's</source>
+        <target>__Ready to contribute? – Check out project's</target>
+      </trans-unit>
+      <trans-unit id="ARpP2ga" resname="Want to share ideas or discuss projet? – Join chat chanel on">
+        <source>Want to share ideas or discuss projet? – Join chat chanel on</source>
+        <target>__Want to share ideas or discuss projet? – Join chat chanel on</target>
+      </trans-unit>
+      <trans-unit id="bfgsSTB" resname="Important notice!">
+        <source>Important notice!</source>
+        <target>__Important notice!</target>
+      </trans-unit>
+      <trans-unit id="4_TT_Ss" resname="All information on this site obtained from a free public API">
+        <source>All information on this site obtained from a free public API</source>
+        <target>__All information on this site obtained from a free public API</target>
+      </trans-unit>
+      <trans-unit id="Gvs09YU" resname="RapidAPI Coronavirus monitor">
+        <source>RapidAPI Coronavirus monitor</source>
+        <target>__RapidAPI Coronavirus monitor</target>
+      </trans-unit>
+      <trans-unit id="AaZZaF8" resname="This is not an official WHO/CDC data.">
+        <source>This is not an official WHO/CDC data.</source>
+        <target>__This is not an official WHO/CDC data.</target>
+      </trans-unit>
+      <trans-unit id="mSUvbFD" resname="People can still get infected and die every day! Keep safe and stay home!">
+        <source>People can still get infected and die every day! Keep safe and stay home!</source>
+        <target>__People can still get infected and die every day! Keep safe and stay home!</target>
+      </trans-unit>
+      <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
+        <source>Site use cookies and other essential web technologies.</source>
+        <target>__Site use cookies and other essential web technologies.</target>
+      </trans-unit>
+      <trans-unit id="8IXuhlc" resname="Go to dashboard">
+        <source>Go to dashboard</source>
+        <target>__Go to dashboard</target>
+      </trans-unit>
+      <trans-unit id="q1nCTvO" resname="About project">
+        <source>About project</source>
+        <target>__About project</target>
+      </trans-unit>
+      <trans-unit id="6RsWrn8" resname="Hello, my name is Artem and I'm a web developer.">
+        <source>Hello, my name is Artem and I'm a web developer.</source>
+        <target>__Hello, my name is Artem and I'm a web developer.</target>
+      </trans-unit>
+      <trans-unit id="wOlZNQq" resname="As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.">
+        <source>As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.</source>
+        <target>__As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.</target>
+      </trans-unit>
+      <trans-unit id="ZzNfFeM" resname="I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.">
+        <source>I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.</source>
+        <target>__I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.</target>
+      </trans-unit>
+      <trans-unit id="WTHwvde" resname="During this hard and scary time it would be great to focus on something good, even if it is not much good.">
+        <source>During this hard and scary time it would be great to focus on something good, even if it is not much good.</source>
+        <target>__During this hard and scary time it would be great to focus on something good, even if it is not much good.</target>
+      </trans-unit>
+      <trans-unit id="SZqBEm1" resname="You can help me to make site better, please check">
+        <source>You can help me to make site better, please check</source>
+        <target>__You can help me to make site better, please check</target>
+      </trans-unit>
+      <trans-unit id="J26tL9l" resname="Help us page">
+        <source>Help us page</source>
+        <target>__Help us page</target>
+      </trans-unit>
+      <trans-unit id="GcMglok" resname="Pandemic data for {date}">
+        <source>Pandemic data for {date}</source>
+        <target>__Pandemic data for {date}</target>
+      </trans-unit>
+      <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
+        <source>Estimated world population on 2020 – {population}</source>
+        <target>__Estimated world population on 2020 – {population}</target>
+      </trans-unit>
+      <trans-unit id="4gmfxNG" resname="it's just {percent}% of the world population">
+        <source>it's just {percent}% of the world population</source>
+        <target>__it's just {percent}% of the world population</target>
+      </trans-unit>
+      <trans-unit id="n7Nb36l" resname="Total recovered">
+        <source>Total recovered</source>
+        <target>__Total recovered</target>
+      </trans-unit>
+      <trans-unit id="2gli5mv" resname="Daily change">
+        <source>Daily change</source>
+        <target>__Daily change</target>
+      </trans-unit>
+      <trans-unit id="abkwgMm" resname="New cases">
+        <source>New cases</source>
+        <target>__New cases</target>
+      </trans-unit>
+      <trans-unit id="lX3SJuC" resname="Less new cases than on">
+        <source>Less new cases than on</source>
+        <target>__Less new cases than on</target>
+      </trans-unit>
+      <trans-unit id="c.W4B4E" resname="No positive dynamic">
+        <source>No positive dynamic</source>
+        <target>__No positive dynamic</target>
+      </trans-unit>
+      <trans-unit id="ZOc40yk" resname="Daily recovered">
+        <source>Daily recovered</source>
+        <target>__Daily recovered</target>
+      </trans-unit>
+      <trans-unit id="ggppOnl" resname="More recovered than on">
+        <source>More recovered than on</source>
+        <target>__More recovered than on</target>
+      </trans-unit>
+      <trans-unit id="opNMxJF" resname="Serious cases">
+        <source>Serious cases</source>
+        <target>__Serious cases</target>
+      </trans-unit>
+      <trans-unit id="3X3hmHN" resname="Less serious than on">
+        <source>Less serious than on</source>
+        <target>__Less serious than on</target>
+      </trans-unit>
+      <trans-unit id=".Nb_py3" resname="Death">
+        <source>Death</source>
+        <target>__Death</target>
+      </trans-unit>
+      <trans-unit id="4988NnE" resname="Less died than on">
+        <source>Less died than on</source>
+        <target>__Less died than on</target>
+      </trans-unit>
+      <trans-unit id="j0agZlm" resname="Recovered total">
+        <source>Recovered total</source>
+        <target>__Recovered total</target>
+      </trans-unit>
+      <trans-unit id="hd9XLRu" resname="Recovered by day">
+        <source>Recovered by day</source>
+        <target>__Recovered by day</target>
+      </trans-unit>
+      <trans-unit id="YPtZKnl" resname="New cases by day">
+        <source>New cases by day</source>
+        <target>__New cases by day</target>
+      </trans-unit>
+      <trans-unit id="RG9Ni7y" resname="Sorry, something goes wrong with the site">
+        <source>Sorry, something goes wrong with the site</source>
+        <target>__Sorry, something goes wrong with the site</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -17,6 +17,10 @@
         <source>uk</source>
         <target>Українська</target>
       </trans-unit>
+      <trans-unit id="ru" resname="ru">
+        <source>ru</source>
+        <target>Русский</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
