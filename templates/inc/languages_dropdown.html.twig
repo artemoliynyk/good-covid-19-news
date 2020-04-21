@@ -1,0 +1,8 @@
+{% trans_default_domain 'languages' %}
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    {% for lang in supported_locales %}
+        <a class="dropdown-item" href="{{ url('index', {'_locale': lang}) }}">
+            {{ lang|trans() }} ({{ lang }})
+        </a>
+    {% endfor %}
+</div>

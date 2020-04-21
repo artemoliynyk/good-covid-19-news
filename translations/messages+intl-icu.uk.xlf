@@ -217,6 +217,14 @@
         <source>Site use cookies and other essential web technologies.</source>
         <target>Сайт використовує cooki та інші основні веб технології</target>
       </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Мова</target>
+      </trans-unit>
+      <trans-unit id="bfgsSTB" resname="Important notice!">
+        <source>Important notice!</source>
+        <target>Важлива інформація!</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

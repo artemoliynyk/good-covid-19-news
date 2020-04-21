@@ -49,7 +49,14 @@
                         <a class="nav-link active">|</a>
                     </li>
 
-                    {% include 'inc/languages.html.twig' %}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% trans %}Language{% endtrans %} ({{ app.request.getLocale() }})
+
+                        </a>
+                        {% include 'inc/languages_dropdown.html.twig' %}
+                    </li>
                 </ul>
             </div>
         </div>
