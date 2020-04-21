@@ -28,6 +28,9 @@
                         <a class="nav-link active" href="{{ url('index') }}">{% trans %}Dashboard{% endtrans %}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('main_countries') }}">{% trans %}Countries{% endtrans %}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="{{ url('static_disclaimer') }}">{% trans %}Disclaimer{% endtrans %}</a>
                     </li>
 
@@ -45,11 +48,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-auto text-right">
-                    <li class="nav-item d-sm-none">
-                        <a class="nav-link active">|</a>
-                    </li>
-
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {% trans %}Language{% endtrans %} ({{ app.request.getLocale() }})

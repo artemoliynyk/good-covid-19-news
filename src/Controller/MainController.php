@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CountryCaseRepository;
 use App\Repository\DailyStatRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,7 +12,7 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index(DailyStatRepository $dailyStatRepository)
+    public function indexAction(DailyStatRepository $dailyStatRepository)
     {
         $worldPopulation = $this->getParameter('world_population');
         $lastRecord = $dailyStatRepository->getLastRecord();
@@ -25,6 +26,21 @@ class MainController extends AbstractController
             'prev_record' => $prevRecord,
             'prev_record_date' => $prevRecord->getDay()->format('d F, Y'),
             'percent' => $percent,
+        ]);
+    }
+
+    /**
+     * @Route("/countries", name="main_countries")
+     */
+    public function countriesAction(CountryCaseRepository $countryCaseRepository, DailyStatRepository $dailyStatRepository)
+    {
+        $lastRecord = $dailyStatRepository->getLastRecord();
+
+        $countryCases = $countryCaseRepository->getAllCounries($lastRecord->getDay());
+
+        return $this->render('main/countries.html.twig', [
+            'last_record' => $lastRecord,
+            'country_cases' => $countryCases,
         ]);
     }
 

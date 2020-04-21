@@ -9,6 +9,7 @@
 import '../scss/app.scss';
 
 require('bootstrap');
+require('bootstrap-table');
 require('chart.js');
 
 $(document).ready(function () {

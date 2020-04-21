@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Countries{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            {% if country_cases is not empty %}
+                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data per country by {date}{% endtrans %}</h3>
+
+                <table class="table table-responsive-sm table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th >{% trans %}Country{% endtrans %}</th>
+                        <th>{% trans %}Active cases{% endtrans %}</th>
+                        <th>{% trans %}Recovered{% endtrans %}</th>
+                        <th>{% trans %}Serious cases{% endtrans %}</th>
+                        <th>{% trans %}Death{% endtrans %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for case in country_cases %}
+                    <tr>
+                        <th>{{ case.country.name }}</th>
+                        <td>
+                            {{ case.active|number }}
+                        </td>
+                        <td>
+                            {{ case.recovered|number }}
+                        </td>
+                        <td>
+                            {{ case.serious|number }}
+                        </td>
+                        <td>
+                            {{ case.deaths|number }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-danger text-center">{% trans %}Sorry, no data available{% endtrans %}</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
