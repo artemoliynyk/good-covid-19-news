@@ -9,16 +9,26 @@
 import '../scss/app.scss';
 
 require('bootstrap');
-require('bootstrap-table');
 require('chart.js');
+require('imports-loader?define=>false,this=>window!datatables.net')(window, $)
 
 $(document).ready(function () {
-
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 
     setTimeout(function () {
         $('.alert-dismissible.alert-auto').fadeOut(200, function () {
             $(this).remove();
         })
     }, 2000);
+
+    $('.table-sortable').DataTable({
+        paging: false,
+        searching: false,
+        autoWidth: false,
+
+        fixedHeader: {
+            header: true,
+            footer: false,
+        },
+    });
 });

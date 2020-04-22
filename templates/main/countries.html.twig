@@ -8,10 +8,10 @@
             {% if country_cases is not empty %}
                 <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data per country by {date}{% endtrans %}</h3>
 
-                <table class="table table-bordered table-striped" data-toggle="table">
+                <table class="table table-bordered table-striped table-sortable" data-toggle="table">
                     <thead>
                     <tr>
-                        <th>{% trans %}Country{% endtrans %}</th>
+                        <th class="text-nowrap">{% trans %}Country{% endtrans %}</th>
                         <th>{% trans %}Active cases{% endtrans %}</th>
                         <th>{% trans %}New cases{% endtrans %}</th>
                         <th>{% trans %}Recovered{% endtrans %}</th>
@@ -24,8 +24,10 @@
                     <tbody>
                     {% for case in country_cases %}
                         <tr>
-                            <th scope="row">{{ case.country.name }}</th>
-                            <td>
+                            <th scope="row" class="font-weight-bold">
+                                {{ case.country.name }}
+                            </th>
+                            <td data-order="{{ case.active }}">
                                 {{ case.active|number }}
                             </td>
 
