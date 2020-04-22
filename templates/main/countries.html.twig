@@ -8,15 +8,15 @@
             {% if country_cases is not empty %}
                 <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data per country by {date}{% endtrans %}</h3>
 
-                <table class="table table-bordered table-striped table-sortable" data-toggle="table">
+                <table id="countries" class="table table-bordered table-responsive-sm table-striped table-sortable">
                     <thead>
                     <tr>
-                        <th class="text-nowrap">{% trans %}Country{% endtrans %}</th>
-                        <th>{% trans %}Active cases{% endtrans %}</th>
-                        <th>{% trans %}New cases{% endtrans %}</th>
+                        <th data-class-name="text-nowrap">{% trans %}Country{% endtrans %}</th>
+                        <th>{% trans %}Active{% endtrans %}</th>
+                        <th>{% trans %}New{% endtrans %}</th>
                         <th>{% trans %}Recovered{% endtrans %}</th>
                         <th>{% trans %}Recovered change{% endtrans %}</th>
-                        <th>{% trans %}Serious cases{% endtrans %}</th>
+                        <th>{% trans %}Serious{% endtrans %}</th>
                         <th>{% trans %}Death{% endtrans %}</th>
                         <th>{% trans %}Death change{% endtrans %}</th>
                     </tr>
@@ -24,10 +24,11 @@
                     <tbody>
                     {% for case in country_cases %}
                         <tr>
-                            <th scope="row" class="font-weight-bold">
+                            <th scope="row" data-ordering="false" class="font-weight-bold">
                                 {{ case.country.name }}
                             </th>
-                            <td data-order="{{ case.active }}">
+
+                            <td data-order="{{ case.active }}" data-search="false">
                                 {{ case.active|number }}
                             </td>
 

@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     $('.table-sortable').DataTable({
         paging: false,
-        searching: false,
+        info: false,
         autoWidth: false,
 
         fixedHeader: {
