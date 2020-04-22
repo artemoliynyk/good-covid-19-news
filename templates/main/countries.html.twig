@@ -8,33 +8,52 @@
             {% if country_cases is not empty %}
                 <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data per country by {date}{% endtrans %}</h3>
 
-                <table class="table table-responsive-sm table-bordered table-striped">
+                <table class="table table-bordered table-striped" data-toggle="table">
                     <thead>
                     <tr>
-                        <th >{% trans %}Country{% endtrans %}</th>
+                        <th>{% trans %}Country{% endtrans %}</th>
                         <th>{% trans %}Active cases{% endtrans %}</th>
+                        <th>{% trans %}New cases{% endtrans %}</th>
                         <th>{% trans %}Recovered{% endtrans %}</th>
+                        <th>{% trans %}Recovered change{% endtrans %}</th>
                         <th>{% trans %}Serious cases{% endtrans %}</th>
                         <th>{% trans %}Death{% endtrans %}</th>
+                        <th>{% trans %}Death change{% endtrans %}</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for case in country_cases %}
-                    <tr>
-                        <th>{{ case.country.name }}</th>
-                        <td>
-                            {{ case.active|number }}
-                        </td>
-                        <td>
-                            {{ case.recovered|number }}
-                        </td>
-                        <td>
-                            {{ case.serious|number }}
-                        </td>
-                        <td>
-                            {{ case.deaths|number }}
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ case.country.name }}</th>
+                            <td>
+                                {{ case.active|number }}
+                            </td>
+
+                            {% set change_new = case.newCases %}
+                            <td class="{{ change_new > 0 ? 'text-white bg-danger' : '' }}">
+                                {{ change_new|number_signed }}
+                            </td>
+                            <td>
+                                {{ case.recovered|number }}
+                            </td>
+
+                            {% set change_recovered = case.casesChange.recovered %}
+                            <td class="text-white {{ change_recovered < 0 ? 'bg-danger' : 'bg-success' }}">
+                                {{ change_recovered|number_signed }}
+                            </td>
+
+                            <td>
+                                {{ case.serious|number }}
+                            </td>
+                            <td>
+                                {{ case.deaths|number }}
+                            </td>
+
+                            {% set change_death = case.casesChange.deaths %}
+                            <td class="text-white {{ change_death >= 0 ? 'bg-danger' : 'bg-success' }}">
+                                {{ change_death|number_signed }}
+                            </td>
+                        </tr>
                     {% endfor %}
                     </tbody>
                 </table>

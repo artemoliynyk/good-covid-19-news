@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\ChangeTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\UniqueConstraint;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -13,6 +14,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class CasesChange
 {
+    use ChangeTrait;
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -34,46 +37,6 @@ class CasesChange
     private $countryCase;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $new;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $newPercent;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $deaths;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $deathsPercent;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $recovered;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $recoveredPercent;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $serious;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $seriousPercent;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="casesChanges")
      * @ORM\JoinColumn(name="country_id", onDelete="CASCADE")
      */
@@ -93,15 +56,6 @@ class CasesChange
             $this->day = $countryCase->getDay();
             $this->country = $countryCase->getCountry();
         }
-
-        $this->new = 0;
-        $this->newPercent = 0;
-        $this->deaths = 0;
-        $this->deathsPercent = 0;
-        $this->recovered = 0;
-        $this->recoveredPercent = 0;
-        $this->serious = 0;
-        $this->seriousPercent = 0;
     }
 
 
