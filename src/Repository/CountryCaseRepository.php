@@ -104,7 +104,8 @@ class CountryCaseRepository extends ServiceEntityRepository
     /**
      * Find country in database or return new instance
      *
-     * @param string $name
+     * @param \DateTimeInterface $day
+     * @throws \Doctrine\ORM\NonUniqueResultException
      * @return CountryCase|null
      */
     public function getDayTotals(\DateTimeInterface $day)
@@ -128,5 +129,26 @@ class CountryCaseRepository extends ServiceEntityRepository
             ->setMaxResults(1);
 
         return $qb->getQuery()->getOneOrNullResult();
+    }
+
+
+    /**
+     * Find country in database or return new instance
+     *
+     * @param \DateTimeInterface $day
+     * @return CountryCase[]
+     */
+    public function getAllCounries(\DateTimeInterface $day)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->where('cc.day = :day')
+            ->setParameters([
+                'day' => $day,
+            ])
+        ->orderBy('cc.active', 'desc');
+
+        return $qb->getQuery()->getResult();
     }
 }

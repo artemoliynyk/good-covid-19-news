@@ -1,8 +1,11 @@
+/*
+* Global styles
+*/
+
 @import "~bootstrap/scss/functions";
 @import "bootstrap-minty/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "bootstrap-minty/bootswatch";
-
 
 body {
     //margin-bottom: 60px;
@@ -16,3 +19,4 @@ body {
     line-height: 50px; /* Vertically center the text there */
     background-color: #f5f5f5;
 }
+

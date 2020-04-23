@@ -1,3 +1,5 @@
+require('chart.js');
+
 $(document).ready(function () {
     // active cases
     var $chartActive = $('#chart-active');

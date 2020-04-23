@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Countries{% endtrans %}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('countries') }}
+{% endblock %}
+
+{% block style %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('countries') }}
+{% endblock style %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            {% if country_cases is not empty %}
+                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.day|date('d F Y') } %}Pandemic data per country by {date}{% endtrans %}</h3>
+
+                <table id="countries" class="table table-bordered table-responsive-sm table-striped table-sortable" data-search-label="{% trans %}Search{% endtrans %}">
+                    <thead>
+                    <tr>
+                        <th data-orderable="false" data-class-name="text-nowrap">{% trans %}Country{% endtrans %}</th>
+                        <th data-searchable="false" data-order="desc">{% trans %}Active{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}New{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Recovered{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Recovered<br>dynamic{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Serious{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Death{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Death<br>dynamic{% endtrans %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for case in country_cases %}
+                        <tr>
+                            <th scope="row">
+                                <b>{{ case.country.name }}</b>
+                            </th>
+
+                            <td data-order="{{ case.active }}">
+                                {{ case.active|number }}
+                            </td>
+
+                            <td data-order="{{ case.newCases }}" class="{{ case.newCases > 0 ? 'text-white bg-danger' : '' }}">
+                                {{ case.newCases|number_signed }}
+                            </td>
+                            <td data-order="{{ case.recovered }}">
+                                {{ case.recovered|number }}
+                            </td>
+
+                            {% set change_recovered = case.casesChange.recovered %}
+                            <td data-order="{{ change_recovered }}" class="text-white {{ change_recovered < 0 ? 'bg-danger' : 'bg-success' }}">
+                                {{ change_recovered|number_signed }}
+                            </td>
+
+                            <td data-order="{{ case.deaths }}">
+                                {{ case.deaths|number }}
+                            </td>
+
+                            <td data-order="{{ case.serious }}">
+                                {{ case.serious|number }}
+                            </td>
+
+                            {% set change_death = case.casesChange.deaths %}
+                            <td data-order="{{ change_death }}" class="text-white {{ change_death >= 0 ? 'bg-danger' : 'bg-success' }}">
+                                {{ change_death|number_signed }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-danger text-center">{% trans %}Sorry, no data available{% endtrans %}</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
