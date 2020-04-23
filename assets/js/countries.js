@@ -15,11 +15,11 @@ $(document).ready(function () {
 
     var $filter = $('.dataTables_filter');
     $filter.addClass('form-inline').addClass('form-group');
-    $filter.find(':input').addClass('form-control');
+    $filter.find(':input').addClass('form-control').prop('placeholder', $tableCountries.data('search-label'));
 
     // move to div
     $filter.find(':input').appendTo($filter);
 
     // translate label
-    $filter.find('label').text($tableCountries.data('search-label') + ':');
+    $filter.find('label').remove();
 });
