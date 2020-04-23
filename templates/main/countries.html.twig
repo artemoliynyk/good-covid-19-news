@@ -26,12 +26,12 @@
                         <th data-searchable="false">{% trans %}New{% endtrans %}</th>
                         <th data-searchable="false">{% trans %}Recovered{% endtrans %}</th>
                         <th data-searchable="false">{% trans %}Recovered<br>dynamic{% endtrans %}</th>
-                        <th data-searchable="false">{% trans %}Serious{% endtrans %}</th>
                         <th data-searchable="false">{% trans %}Death{% endtrans %}</th>
                         <th data-searchable="false">{% trans %}Death<br>dynamic{% endtrans %}</th>
+                        <th data-searchable="false">{% trans %}Serious{% endtrans %}</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="text-nowrap">
                     {% for case in country_cases %}
                         <tr>
                             <th scope="row">
@@ -45,6 +45,7 @@
                             <td data-order="{{ case.newCases }}" class="{{ case.newCases > 0 ? 'text-white bg-danger' : '' }}">
                                 {{ case.newCases|number_signed }}
                             </td>
+
                             <td data-order="{{ case.recovered }}">
                                 {{ case.recovered|number }}
                             </td>
@@ -58,13 +59,13 @@
                                 {{ case.deaths|number }}
                             </td>
 
-                            <td data-order="{{ case.serious }}">
-                                {{ case.serious|number }}
-                            </td>
-
                             {% set change_death = case.casesChange.deaths %}
                             <td data-order="{{ change_death }}" class="text-white {{ change_death >= 0 ? 'bg-danger' : 'bg-success' }}">
                                 {{ change_death|number_signed }}
+                            </td>
+
+                            <td data-order="{{ case.serious }}">
+                                {{ case.serious|number }}
                             </td>
                         </tr>
                     {% endfor %}
