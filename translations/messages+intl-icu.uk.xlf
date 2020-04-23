@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="Z7aWRoY" resname="Dashboard">
         <source>Dashboard</source>
-        <target>Дешборд</target>
+        <target>Головна</target>
       </trans-unit>
       <trans-unit id="Epxnj85" resname="Disclaimer">
         <source>Disclaimer</source>
@@ -224,6 +224,46 @@
       <trans-unit id="bfgsSTB" resname="Important notice!">
         <source>Important notice!</source>
         <target>Важлива інформація!</target>
+      </trans-unit>
+      <trans-unit id="j69_x6s" resname="Countries">
+        <source>Countries</source>
+        <target>Країни</target>
+      </trans-unit>
+      <trans-unit id="7oGKK2b" resname="Pandemic data per country by {date}">
+        <source>Pandemic data per country by {date}</source>
+        <target>Дані пандемії по країнах на {date}</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Пошук</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Країна</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>Хворі</target>
+      </trans-unit>
+      <trans-unit id="GP3VSbL" resname="New">
+        <source>New</source>
+        <target>Нові</target>
+      </trans-unit>
+      <trans-unit id="wXPaLCp" resname="Serious">
+        <source>Serious</source>
+        <target>Важкі</target>
+      </trans-unit>
+      <trans-unit id="kQwULcO" resname="Sorry, no data available">
+        <source>Sorry, no data available</source>
+        <target>Вибачте, немає даних</target>
+      </trans-unit>
+      <trans-unit id="Rqne0qF" resname="Recovered&lt;br&gt;dynamic">
+        <source>Recovered&lt;br&gt;dynamic</source>
+        <target><![CDATA[Динаміка<br>видужання]]></target>
+      </trans-unit>
+      <trans-unit id="M0EVFYk" resname="Death&lt;br&gt;dynamic">
+        <source>Death&lt;br&gt;dynamic</source>
+        <target><![CDATA[Динаміка<br>смертей]]></target>
       </trans-unit>
     </body>
   </file>

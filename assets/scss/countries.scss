@@ -1,0 +1,10 @@
+@import "~datatables.net-dt";
+
+table#countries {
+    thead {
+        td, th {
+            text-align: center;
+            vertical-align: top;
+        }
+    }
+}

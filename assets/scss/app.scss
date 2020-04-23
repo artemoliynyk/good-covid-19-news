@@ -1,10 +1,11 @@
+/*
+* Global styles
+*/
+
 @import "~bootstrap/scss/functions";
 @import "bootstrap-minty/variables";
 @import "~bootstrap/scss/bootstrap";
 @import "bootstrap-minty/bootswatch";
-
-@import "~datatables.net-dt";
-
 
 body {
     //margin-bottom: 60px;
@@ -19,11 +20,3 @@ body {
     background-color: #f5f5f5;
 }
 
-table#countries {
-    thead {
-        td, th {
-            text-align: center;
-            vertical-align: top;
-        }
-    }
-}
