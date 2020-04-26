@@ -83,7 +83,7 @@ class StatisticsService
                     }
                     $noDataDay->setNewRecovered($recoveredChange);
 
-                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getDay()->format('r')}: {$recoveredChange} staged");
+                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getCaseDate()->format('r')}: {$recoveredChange} staged");
                     $this->em->persist($noDataDay);
                 }
 
@@ -125,7 +125,7 @@ class StatisticsService
                 $prevDay = $this->repoCountryCase->getCasesPrevDay($currentDay);
 
                 $caseChange = new CasesChange($currentDay);
-                $currentDate = $currentDay->getDay();
+                $currentDate = $currentDay->getCaseDate();
 
                 if (!is_null($prevDay)) {
                     // new cases change

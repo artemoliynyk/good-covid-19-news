@@ -8,8 +8,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CountryCaseRepository")
- * @ORM\Table(name="country_cases", uniqueConstraints={@UniqueConstraint(columns={"day", "country_id"})})
- * @UniqueEntity(fields={"day", "country"})
+ * @ORM\Table(name="country_cases", uniqueConstraints={@UniqueConstraint(columns={"case_date", "country_id"})})
+ * @UniqueEntity(fields={"caseDate", "country"})
  */
 class CountryCase
 {
@@ -27,9 +27,9 @@ class CountryCase
     private $country;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(name="case_date", type="datetime")
      */
-    private $day;
+    private $caseDate;
 
     /**
      * @ORM\Column(type="integer")
@@ -100,19 +100,19 @@ class CountryCase
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
-    public function getDay()
+    public function getCaseDate(): \DateTimeInterface
     {
-        return $this->day;
+        return $this->caseDate;
     }
 
     /**
-     * @param \DateTime $day
+     * @param \DateTimeInterface $caseDate
      */
-    public function setDay($day): void
+    public function setCaseDate(\DateTimeInterface $caseDate): void
     {
-        $this->day = $day;
+        $this->caseDate = $caseDate;
     }
 
     public function getTotal(): ?int
@@ -260,7 +260,7 @@ class CountryCase
     public function loadJSON(Country $country, \DateTime $statDate, object $jsonResponse, callable $numberFormatFunction)
     {
         $this->country = $country;
-        $this->day = $statDate;
+        $this->caseDate = $statDate;
 
         $this->total = $numberFormatFunction((isset($jsonResponse->cases) ? $jsonResponse->cases : $jsonResponse->total_cases));
         $this->deaths = $numberFormatFunction((isset($jsonResponse->deaths) ? $jsonResponse->deaths : $jsonResponse->total_deaths));

@@ -123,7 +123,7 @@ class CovidApiService
 
     private function saveCountryStat(\DateTime $statDate, Country $country, $countryData)
     {
-        $cases = $this->repoCountryCase->findOneBy(['day' => $statDate, 'country' => $country]);
+        $cases = $this->repoCountryCase->getForCountryByDate($statDate, $country);
 
         if (!$cases instanceof CountryCase) {
             $cases = new CountryCase();

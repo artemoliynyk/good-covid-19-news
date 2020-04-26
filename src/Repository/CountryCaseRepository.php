@@ -27,11 +27,12 @@ class CountryCaseRepository extends ServiceEntityRepository
         $qb
             ->select('cc')
             ->where('cc.country = :country')
-            ->orderBy('cc.day', 'ASC')
+            ->orderBy('cc.caseDate', 'ASC')
             ->setMaxResults(1)
             ->setParameters([
                 'country' => $country,
-            ]);
+            ])
+        ;
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -48,10 +49,11 @@ class CountryCaseRepository extends ServiceEntityRepository
             ->andWhere(
                 $qb->expr()->isNull('cc.newRecovered')
             )
-            ->orderBy('cc.day', 'ASC')
+            ->orderBy('cc.caseDate', 'ASC')
             ->setParameters([
                 'country' => $country,
-            ]);
+            ])
+        ;
 
         return $qb->getQuery()->getResult();
     }
@@ -68,10 +70,11 @@ class CountryCaseRepository extends ServiceEntityRepository
             ->andWhere(
                 $qb->expr()->isNull('cc.casesChange')
             )
-            ->orderBy('cc.day', 'ASC')
+            ->orderBy('cc.caseDate', 'ASC')
             ->setParameters([
                 'country' => $country,
-            ]);
+            ])
+        ;
 
         return $qb->getQuery()->getResult();
     }
@@ -88,14 +91,15 @@ class CountryCaseRepository extends ServiceEntityRepository
         $qb
             ->where('cc.country = :country')
             ->andWhere(
-                $qb->expr()->lt('cc.day', ':day')
+                $qb->expr()->lt('cc.caseDate', ':date')
             )
-            ->orderBy('cc.day', 'DESC')
+            ->orderBy('cc.caseDate', 'DESC')
             ->setParameters([
                 'country' => $cases->getCountry(),
-                'day' => $cases->getDay(),
+                'date' => $cases->getCaseDate(),
             ])
-            ->setMaxResults(1);
+            ->setMaxResults(1)
+        ;
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -104,11 +108,11 @@ class CountryCaseRepository extends ServiceEntityRepository
     /**
      * Find country in database or return new instance
      *
-     * @param \DateTimeInterface $day
+     * @param \DateTimeInterface $date
      * @throws \Doctrine\ORM\NonUniqueResultException
      * @return CountryCase|null
      */
-    public function getDayTotals(\DateTimeInterface $day)
+    public function getDayTotals(\DateTimeInterface $date)
     {
         $qb = $this->createQueryBuilder('cc');
 
@@ -122,11 +126,12 @@ class CountryCaseRepository extends ServiceEntityRepository
             'SUM(cc.serious) AS serious',
             'SUM(cc.active) AS active'
         )
-            ->where('cc.day = :day')
+            ->where('cc.caseDate = :date')
             ->setParameters([
-                'day' => $day,
+                'date' => $date,
             ])
-            ->setMaxResults(1);
+            ->setMaxResults(1)
+        ;
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -135,20 +140,26 @@ class CountryCaseRepository extends ServiceEntityRepository
     /**
      * Find country in database or return new instance
      *
-     * @param \DateTimeInterface $day
+     * @param \DateTimeInterface $date
      * @return CountryCase[]
      */
-    public function getAllCounries(\DateTimeInterface $day)
+    public function getAllCounries(\DateTimeInterface $date)
     {
         $qb = $this->createQueryBuilder('cc');
 
         $qb->select('cc')
-            ->where('cc.day = :day')
+            ->where('cc.caseDate = :date')
             ->setParameters([
-                'day' => $day,
+                'date' => $date,
             ])
-        ->orderBy('cc.active', 'desc');
+            ->orderBy('cc.active', 'desc')
+        ;
 
         return $qb->getQuery()->getResult();
+    }
+
+    public function getForCountryByDate($statDate, $country)
+    {
+        return $this->findOneBy(['caseDate' => $statDate, 'country' => $country]);
     }
 }

@@ -53,7 +53,7 @@ class CasesChange
             $countryCase->setCasesChange($this);
             $this->countryCase = $countryCase;
 
-            $this->day = $countryCase->getDay();
+            $this->day = $countryCase->getCaseDate();
             $this->country = $countryCase->getCountry();
         }
     }
