@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% trans %}Country{% endtrans %} - {{ country_case.country.name }}{% endblock %}
+{% block title %}{% trans %}Country{% endtrans %} - {{ country_name }}{% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
@@ -12,8 +12,11 @@
         <div class="col">
 
             {% if country_case is not null %}
-                <h3 class="font-weight-bold text-center">{% trans with {'{date}': country_case.casesChange.changeDate|date('d F, Y') } %}Pandemic data for {date}{% endtrans %}</h3>
+                <h2 class="font-weight-bold text-center">
+                    {{ country_name }}
+                </h2>
 
+                <h3 class="text-center">{% trans with {'{date}': country_case.casesChange.changeDate|date('d F, Y') } %}Pandemic data for {date}{% endtrans %}</h3>
                 <hr>
 
                 <div class="row mb-5">
@@ -51,7 +54,7 @@
                     </div>
                 </div>
 
-                <h4 class="font-weight-bold text-center">{{ country_case.country.name }}: {% trans %}Daily change{% endtrans %}</h4>
+                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Daily change{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
                         <div class="card text-center">
@@ -119,7 +122,7 @@
                 </div>
 
 
-                <h4 class="font-weight-bold text-center">{{ country_case.country.name }}: {% trans %}Recovered total{% endtrans %}</h4>
+                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered total{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
                         <canvas id="chart-recovered" height="180" data-url="{{ url('json_country_recovered', {'country': country_case.country.id}) }}"></canvas>
@@ -128,7 +131,7 @@
 
                 <br>
 
-                <h4 class="font-weight-bold text-center">{{ country_case.country.name }}: {% trans %}Recovered by day{% endtrans %}</h4>
+                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered by day{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
                         <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_country_recovered_daily', {'country': country_case.country.id}) }}"></canvas>
@@ -137,7 +140,7 @@
 
                 <br>
 
-                <h4 class="font-weight-bold text-center">{{ country_case.country.name }}: {% trans %}Active cases{% endtrans %}</h4>
+                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Active cases{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
                         <canvas id="chart-active" height="180" data-url="{{ url('json_country_active_cases', {'country': country_case.country.id}) }}"></canvas>
@@ -146,7 +149,7 @@
 
                 <br>
 
-                <h4 class="font-weight-bold text-center">{{ country_case.country.name }}: {% trans %}New cases by day{% endtrans %}</h4>
+                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}New cases by day{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
                         <canvas id="chart-new-daily" height="180" data-url="{{ url('json_country_new_daily', {'country': country_case.country.id}) }}"></canvas>

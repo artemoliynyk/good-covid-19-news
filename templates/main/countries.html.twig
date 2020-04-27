@@ -35,7 +35,7 @@
                     {% for case in country_cases %}
                         <tr>
                             <th scope="row">
-                                <b>{{ case.country.name }}</b>
+                                <a href="{{ url('main_country_view', {'country_name': case.country.name}) }}">{{ case.country.name }}</a>
                             </th>
 
                             <td data-order="{{ case.active }}">

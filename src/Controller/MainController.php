@@ -56,7 +56,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/countries/{country_name}", name="main_country_view", requirements={"country_name"="\w+"})
+     * @Route("/countries/{country_name}", name="main_country_view", requirements={"country_name"="[\w\s.-]+"})
      *
      * @ParamConverter("country", class="App\Entity\Country", options={"mapping": {"country_name" = "name"} })
      *
@@ -73,6 +73,7 @@ class MainController extends AbstractController
 
         return $this->render('main/country.html.twig', [
             'country_case' => $countryCase,
+            'country_name' => $countryCase->getCountry()->getName(),
             'prev_record' => $prevRecord,
             'prev_record_date' => $prevRecord->getCaseDate()->format('d F, Y'),
         ]);
