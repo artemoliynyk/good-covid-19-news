@@ -88,6 +88,10 @@ class CountryCaseRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('cc');
 
+        // set case day to midnight
+        $caseDay = clone $cases->getCaseDate();
+        $caseDay->setTime(0,0,0);
+
         $qb
             ->where('cc.country = :country')
             ->andWhere(
@@ -96,7 +100,7 @@ class CountryCaseRepository extends ServiceEntityRepository
             ->orderBy('cc.caseDate', 'DESC')
             ->setParameters([
                 'country' => $cases->getCountry(),
-                'date' => $cases->getCaseDate(),
+                'date' => $caseDay,
             ])
             ->setMaxResults(1)
         ;

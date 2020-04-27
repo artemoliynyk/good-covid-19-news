@@ -19,9 +19,9 @@ class DailyStat
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="date", unique=true)
+     * @ORM\Column(type="datetime", unique=true)
      */
-    private $day;
+    private $dailyDate;
 
     /**
      * @var integer
@@ -79,7 +79,7 @@ class DailyStat
     /**
      * DailyStat constructor.
      */
-    public function __construct(?\DateTimeInterface $day = null)
+    public function __construct(?\DateTime $day = null)
     {
         $this->total = 0;
         $this->deaths = 0;
@@ -91,7 +91,7 @@ class DailyStat
         $this->active = 0;
 
         if (!is_null($day)) {
-            $this->day = $day;
+            $this->dailyDate = $day;
         }
     }
 
@@ -107,17 +107,17 @@ class DailyStat
     /**
      * @return \DateTimeInterface
      */
-    public function getDay(): \DateTimeInterface
+    public function getDailyDate(): \DateTimeInterface
     {
-        return $this->day;
+        return $this->dailyDate;
     }
 
     /**
-     * @param \DateTime $day
+     * @param \DateTime $dailyDate
      */
-    public function setDay($day): self
+    public function setDailyDate($dailyDate): self
     {
-        $this->day = $day;
+        $this->dailyDate = $dailyDate;
 
         return $this;
     }
@@ -293,6 +293,6 @@ class DailyStat
         $this->newDeaths = $numberFormatFunction($jsonResponse->new_deaths);
 
         $date = new \DateTime($jsonResponse->statistic_taken_at);
-        $this->day = $date;
+        $this->dailyDate = $date;
     }
 }

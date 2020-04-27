@@ -100,17 +100,17 @@ class CountryCase
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return \DateTime
      */
-    public function getCaseDate(): \DateTimeInterface
+    public function getCaseDate(): \DateTime
     {
         return $this->caseDate;
     }
 
     /**
-     * @param \DateTimeInterface $caseDate
+     * @param \DateTime $caseDate
      */
-    public function setCaseDate(\DateTimeInterface $caseDate): void
+    public function setCaseDate(\DateTime $caseDate): void
     {
         $this->caseDate = $caseDate;
     }

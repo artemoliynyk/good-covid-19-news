@@ -24,7 +24,7 @@ class MainController extends AbstractController
             'world_population' => $worldPopulation,
             'last_record' => $lastRecord,
             'prev_record' => $prevRecord,
-            'prev_record_date' => $prevRecord->getDay()->format('d F, Y'),
+            'prev_record_date' => $prevRecord->getDailyDate()->format('d F, Y'),
             'percent' => $percent,
         ]);
     }
@@ -36,7 +36,7 @@ class MainController extends AbstractController
     {
         $lastRecord = $dailyStatRepository->getLastRecord();
 
-        $countryCases = $countryCaseRepository->getAllCounries($lastRecord->getDay());
+        $countryCases = $countryCaseRepository->getAllCounries($lastRecord->getDailyDate());
 
         return $this->render('main/countries.html.twig', [
             'last_record' => $lastRecord,

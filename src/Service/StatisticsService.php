@@ -18,6 +18,8 @@ use Psr\Log\LoggerInterface;
 
 class StatisticsService
 {
+    const DATE_FORMAT = 'Y-m-d H:i:s';
+
     /**
      * @var EntityManagerInterface
      */
@@ -47,7 +49,7 @@ class StatisticsService
      * StatisticsService constructor.
      *
      * @param EntityManagerInterface $em
-     * @param LoggerInterface $statsLogger
+     * @param LoggerInterface        $statsLogger
      */
     public function __construct(EntityManagerInterface $em, LoggerInterface $statsLogger)
     {
@@ -83,7 +85,7 @@ class StatisticsService
                     }
                     $noDataDay->setNewRecovered($recoveredChange);
 
-                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getCaseDate()->format('r')}: {$recoveredChange} staged");
+                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getCaseDate()->format(StatisticsService::DATE_FORMAT)} since {$prevDay->getCaseDate()->format(StatisticsService::DATE_FORMAT)}: {$recoveredChange} staged");
                     $this->em->persist($noDataDay);
                 }
 
@@ -108,8 +110,9 @@ class StatisticsService
         $noRecovered = $this->repoCountryCase->count(['newRecovered' => null]);
 
         // do not calculate changes if no recovered data available
-        if( $noRecovered > 0) {
+        if ($noRecovered > 0) {
             $this->logger->error("Unable to calculate totals, some countries has missing new recovered data. Please run `app:stats:calculate recovered` first");
+
             return false;
         }
 
@@ -150,7 +153,7 @@ class StatisticsService
                 }
 
 
-                $dayStat = $this->repoDailyStat->findOneBy(['day' => $currentDate]);
+                $dayStat = $this->repoDailyStat->getByDate($currentDate);
                 if (is_null($dayStat)) {
                     $dayStat = new DailyStat($currentDate);
                     $this->em->persist($dayStat);
@@ -158,7 +161,7 @@ class StatisticsService
 
                 $changes++;
                 $this->em->persist($currentDay);
-                $this->logger->info("{$country->getName()} daily change for {$currentDate->format('r')} staged");
+                $this->logger->info("{$country->getName()} daily change for {$currentDate->format(StatisticsService::DATE_FORMAT)} staged");
             }
 
             if (0 < $changes) {
@@ -183,8 +186,9 @@ class StatisticsService
         $noRecovered = $this->repoCountryCase->count(['newRecovered' => null]);
 
         // do not calculate changes if no recovered data available
-        if( $noRecovered > 0) {
+        if ($noRecovered > 0) {
             $this->logger->error("Unable to calculate totals, some countries has missing new recovered data. Please run `app:stats:calculate recovered` first");
+
             return false;
         }
 
@@ -193,7 +197,7 @@ class StatisticsService
 
         /** @var DailyStat $currentDay */
         foreach ($noChangeDays as $currentDay) {
-            $currentDate = $currentDay->getDay();
+            $currentDate = $currentDay->getDailyDate();
 
             $dayTotals = $this->repoCountryCase->getDayTotals($currentDate);
 
@@ -209,11 +213,11 @@ class StatisticsService
             try {
                 $this->em->persist($currentDay);
                 $this->em->flush();
-                $this->em->clear();
+//                $this->em->clear();
 
-                $this->logger->info("Daily total for {$currentDate->format('r')} SAVED!\n");
+                $this->logger->info("Daily total for {$currentDate->format(StatisticsService::DATE_FORMAT)} SAVED!\n");
             } catch (\Exception $exception) {
-                $this->logger->error("Unable to save daily total for {$currentDate->format('r')} due to an error: {$exception->getMessage()}");
+                $this->logger->error("Unable to save daily total for {$currentDate->format(StatisticsService::DATE_FORMAT)} due to an error: {$exception->getMessage()}");
 
                 return false;
             }
@@ -232,7 +236,7 @@ class StatisticsService
         foreach ($noChangeDays as $currentDay) {
             $dailyChange = new DailyChange($currentDay);
 
-            $currentDate = $currentDay->getDay();
+            $currentDate = $currentDay->getDailyDate();
             $prevDay = $this->repoDailyStat->getPrevDayStat($currentDay);
 
             if (!is_null($prevDay)) {
@@ -261,7 +265,7 @@ class StatisticsService
             $this->em->persist($currentDay);
             $changes++;
 
-            $this->logger->info("Daily change for {$currentDate->format('r')} staged");
+            $this->logger->info("Daily change for {$currentDate->format(StatisticsService::DATE_FORMAT)} staged");
 
         }
 
@@ -270,9 +274,9 @@ class StatisticsService
                 $this->em->flush();
                 $this->em->clear();
 
-                $this->logger->info("Daily change for {$currentDate->format('r')} SAVED!\n");
+                $this->logger->info("Daily change for {$currentDate->format(StatisticsService::DATE_FORMAT)} SAVED!\n");
             } catch (\Exception $exception) {
-                $this->logger->error("Unable to save daily chane for {$currentDate->format('r')} due to an error: {$exception->getMessage()}");
+                $this->logger->error("Unable to save daily chane for {$currentDate->format(StatisticsService::DATE_FORMAT)} due to an error: {$exception->getMessage()}");
 
                 return false;
             }

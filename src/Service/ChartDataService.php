@@ -18,6 +18,9 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ChartDataService
 {
+
+    const DATE_FORMAT = 'd F, Y H:i';
+
     /**
      * @var EntityManagerInterface
      */
@@ -38,6 +41,7 @@ class ChartDataService
      */
     private $repoCountryCase;
     private $worldPopulation;
+
     /**
      * @var TranslatorInterface
      */
@@ -78,7 +82,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $dayData->getDay()->format("d F, Y");
+            $day = $dayData->getDailyDate()->format(ChartDataService::DATE_FORMAT);
             $cases[$day] = $dayData->getActive();
         }
 
@@ -95,7 +99,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $dayData->getDay()->format("d F, Y");
+            $day = $dayData->getDailyDate()->format(ChartDataService::DATE_FORMAT);
             $cases[$day] = $dayData->getRecovered();
         }
 
@@ -112,7 +116,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $dayData->getDay()->format("d F, Y");
+            $day = $dayData->getDailyDate()->format(ChartDataService::DATE_FORMAT);
             $cases[$day] = $dayData->getNewCases();
         }
 
@@ -129,7 +133,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $dayData->getDay()->format("d F, Y");
+            $day = $dayData->getDailyDate()->format(ChartDataService::DATE_FORMAT);
             $cases[$day] = $dayData->getNewRecovered();
         }
 
