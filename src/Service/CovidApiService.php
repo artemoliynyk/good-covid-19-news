@@ -123,7 +123,7 @@ class CovidApiService
 
     private function saveCountryStat(\DateTime $statDate, Country $country, $countryData)
     {
-        $cases = $this->repoCountryCase->findOneBy(['day' => $statDate, 'country' => $country]);
+        $cases = $this->repoCountryCase->getForCountryByDate($statDate, $country);
 
         if (!$cases instanceof CountryCase) {
             $cases = new CountryCase();
@@ -140,7 +140,7 @@ class CovidApiService
                 $this->logger->error(
                     sprintf('Unable to country %s daily stat by %s due to error: %s',
                         $country->getName(),
-                        $statDate->format('r'),
+                        $statDate->format(StatisticsService::DATE_FORMAT),
                         $exception->getMessage()
                     )
                 );
@@ -151,7 +151,7 @@ class CovidApiService
             $this->logger->info(
                 sprintf('Stat for country %s by day "%s" already present',
                     $country->getName(),
-                    $statDate->format('r')
+                    $statDate->format(StatisticsService::DATE_FORMAT)
                 )
             );
         }

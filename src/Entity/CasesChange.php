@@ -9,8 +9,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CasesChangeRepository")
- * @ORM\Table(name="cases_change", uniqueConstraints={@UniqueConstraint(columns={"day", "country_id"})})
- * @UniqueEntity(fields={"day", "country"})
+ * @ORM\Table(name="cases_change", uniqueConstraints={@UniqueConstraint(columns={"change_date", "country_id"})})
+ * @UniqueEntity(fields={"changeDate", "country"})
  */
 class CasesChange
 {
@@ -24,9 +24,9 @@ class CasesChange
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(name="change_date", type="datetime")
      */
-    private $day;
+    private $changeDate;
 
     /**
      * @var CountryCase
@@ -53,7 +53,7 @@ class CasesChange
             $countryCase->setCasesChange($this);
             $this->countryCase = $countryCase;
 
-            $this->day = $countryCase->getDay();
+            $this->changeDate = $countryCase->getCaseDate();
             $this->country = $countryCase->getCountry();
         }
     }
@@ -78,17 +78,17 @@ class CasesChange
     /**
      * @return mixed
      */
-    public function getDay()
+    public function getChangeDate()
     {
-        return $this->day;
+        return $this->changeDate;
     }
 
     /**
-     * @param mixed $day
+     * @param mixed $changeDate
      */
-    public function setDay($day): void
+    public function setChangeDate($changeDate): void
     {
-        $this->day = $day;
+        $this->changeDate = $changeDate;
     }
 
 

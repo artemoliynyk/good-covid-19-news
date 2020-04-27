@@ -28,7 +28,7 @@ class DailyStatRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('ds');
 
         $qb->select('ds')
-            ->orderBy('ds.day', 'DESC')
+            ->orderBy('ds.dailyDate', 'DESC')
             ->setMaxResults(1);
 
         return $qb->getQuery()->getSingleResult();
@@ -44,7 +44,7 @@ class DailyStatRepository extends ServiceEntityRepository
         $qb->where(
             $qb->expr()->isNull('ds.dailyChange')
         )
-            ->orderBy('ds.day', 'ASC');
+            ->orderBy('ds.dailyDate', 'ASC');
 
         return $qb->getQuery()->getResult();
     }
@@ -61,11 +61,11 @@ class DailyStatRepository extends ServiceEntityRepository
 
         $qb
             ->where(
-                $qb->expr()->lt('ds.day', ':day')
+                $qb->expr()->lt('ds.dailyDate', ':date')
             )
-            ->orderBy('ds.day', 'DESC')
+            ->orderBy('ds.dailyDate', 'DESC')
             ->setParameters([
-                'day' => $dailyStat->getDay(),
+                'date' => $dailyStat->getDailyDate(),
             ])
             ->setMaxResults(1);
 
@@ -79,8 +79,13 @@ class DailyStatRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('ds');
 
-        $qb->select('ds')->orderBy('ds.day', 'ASC');
+        $qb->select('ds')->orderBy('ds.dailyDate', 'ASC');
 
         return $qb->getQuery()->getResult();
+    }
+
+    public function getByDate(\DateTime $date)
+    {
+        return$this->findOneBy(['dailyDate' => $date]);
     }
 }
