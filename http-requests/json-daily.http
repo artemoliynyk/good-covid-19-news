@@ -1,2 +1,2 @@
-GET http://{{server_host}}/json/daily
+GET http://{{server_host}}/en/json/daily
 Accept: application/jsons

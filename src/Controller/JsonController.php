@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Country;
 use App\Service\ChartDataService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -44,6 +45,7 @@ class JsonController extends AbstractController
         return new JsonResponse($data);
     }
 
+    // general countr
     /**
      * @Route("/json/active-cases", name="json_active_cases")
      */
@@ -80,6 +82,47 @@ class JsonController extends AbstractController
     public function newDailyAction()
     {
         $data = $this->chartDataService->getNewCasesDaily();
+
+        return new JsonResponse($data);
+    }
+
+    // country chart
+    /**
+     * @Route("/json/active-cases/{country}", name="json_country_active_cases")
+     */
+    public function countryActiveCasesAction(Country $country)
+    {
+        $data = $this->chartDataService->getCountryActive($country);
+
+        return new JsonResponse($data);
+    }
+
+    /**
+     * @Route("/json/recovered/{country}", name="json_country_recovered")
+     */
+    public function countryRecoveredAction(Country $country)
+    {
+        $data = $this->chartDataService->getCountryRecovered($country);
+
+        return new JsonResponse($data);
+    }
+
+    /**
+     * @Route("/json/recovered-daily/{country}", name="json_country_recovered_daily")
+     */
+    public function countryRecoveredDailyAction(Country $country)
+    {
+        $data = $this->chartDataService->getCountryNewRecoveredDaily($country);
+
+        return new JsonResponse($data);
+    }
+
+    /**
+     * @Route("/json/new-daily/{country}", name="json_country_new_daily")
+     */
+    public function countryNewDailyAction(Country $country)
+    {
+        $data = $this->chartDataService->getCountryNewCasesDaily($country);
 
         return new JsonResponse($data);
     }

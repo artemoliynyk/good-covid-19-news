@@ -1,0 +1,2 @@
+GET http://{{server_host}}/en/json/active-cases/1
+Accept: application/jsons

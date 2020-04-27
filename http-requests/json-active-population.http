@@ -1,2 +1,2 @@
-GET http://{{server_host}}/json/active-population
+GET http://{{server_host}}/en/json/active-population
 Accept: application/jsons

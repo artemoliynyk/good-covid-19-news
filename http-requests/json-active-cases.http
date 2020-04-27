@@ -1,2 +1,2 @@
-GET http://{{server_host}}/json/active-cases
+GET http://{{server_host}}/en/json/active-cases
 Accept: application/jsons

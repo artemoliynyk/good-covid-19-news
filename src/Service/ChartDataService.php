@@ -40,6 +40,7 @@ class ChartDataService
      * @var \App\Repository\CountryCaseRepository
      */
     private $repoCountryCase;
+
     private $worldPopulation;
 
     /**
@@ -51,7 +52,7 @@ class ChartDataService
      * StatisticsService constructor.
      *
      * @param EntityManagerInterface $em
-     * @param LoggerInterface $statsLogger
+     * @param LoggerInterface        $statsLogger
      */
     public function __construct(EntityManagerInterface $em, $worldPopulation, TranslatorInterface $translator)
     {
@@ -134,6 +135,75 @@ class ChartDataService
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
             $day = $dayData->getDailyDate()->format(ChartDataService::DATE_FORMAT);
+            $cases[$day] = $dayData->getNewRecovered();
+        }
+
+        $data = [
+            'title' => $this->translator->trans('New recovered'),
+            'data' => $cases,
+        ];
+
+        return $data;
+    }
+
+
+    public function getCountryActive(Country $country)
+    {
+        $cases = [];
+        $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
+        foreach ($lastRecord as $dayData) {
+            $day = $dayData->getCaseDate()->format(ChartDataService::DATE_FORMAT);
+            $cases[$day] = $dayData->getActive();
+        }
+
+        $data = [
+            'title' => $this->translator->trans('Active cases'),
+            'data' => $cases,
+        ];
+
+        return $data;
+    }
+
+    public function getCountryRecovered(Country $country)
+    {
+        $cases = [];
+        $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
+        foreach ($lastRecord as $dayData) {
+            $day = $dayData->getCaseDate()->format(ChartDataService::DATE_FORMAT);
+            $cases[$day] = $dayData->getRecovered();
+        }
+
+        $data = [
+            'title' => $this->translator->trans('Recovered'),
+            'data' => $cases,
+        ];
+
+        return $data;
+    }
+
+    public function getCountryNewCasesDaily(Country $country)
+    {
+        $cases = [];
+        $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
+        foreach ($lastRecord as $dayData) {
+            $day = $dayData->getCaseDate()->format(ChartDataService::DATE_FORMAT);
+            $cases[$day] = $dayData->getNewCases();
+        }
+
+        $data = [
+            'title' => $this->translator->trans('New infected'),
+            'data' => $cases,
+        ];
+
+        return $data;
+    }
+
+    public function getCountryNewRecoveredDaily(Country $country)
+    {
+        $cases = [];
+        $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
+        foreach ($lastRecord as $dayData) {
+            $day = $dayData->getCaseDate()->format(ChartDataService::DATE_FORMAT);
             $cases[$day] = $dayData->getNewRecovered();
         }
 

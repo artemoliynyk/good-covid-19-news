@@ -90,7 +90,7 @@ class CountryCaseRepository extends ServiceEntityRepository
 
         // set case day to midnight
         $caseDay = clone $cases->getCaseDate();
-        $caseDay->setTime(0,0,0);
+        $caseDay->setTime(0, 0, 0);
 
         $qb
             ->where('cc.country = :country')
@@ -165,5 +165,41 @@ class CountryCaseRepository extends ServiceEntityRepository
     public function getForCountryByDate($statDate, $country)
     {
         return $this->findOneBy(['caseDate' => $statDate, 'country' => $country]);
+    }
+
+    /**
+     * @param Country $country
+     * @return CountryCase
+     */
+    public function getLastByCountry(Country $country)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->where('cc.country = :country')
+            ->setParameters([
+                'country' => $country,
+            ])
+            ->orderBy('cc.caseDate', 'desc')
+            ->setMaxResults(1)
+        ;
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
+
+
+    /**
+     * @return CountryCase[]|null
+     */
+    public function getCountryOrdered(Country $country)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')->orderBy('cc.caseDate', 'ASC')
+            ->where('cc.country = :country')
+            ->setParameter('country', $country)
+        ;
+
+        return $qb->getQuery()->getResult();
     }
 }
