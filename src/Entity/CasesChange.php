@@ -24,7 +24,7 @@ class CasesChange
     private $id;
 
     /**
-     * @ORM\Column(name="change_date", type="datetime")
+     * @ORM\Column(name="change_date", type="date")
      */
     private $changeDate;
 

@@ -58,7 +58,7 @@ class CovidApiService
      * CovidApiService constructor.
      *
      * @param ClientInterface $guzzleClient
-     * @param $rapidapiKey
+     * @param                 $rapidapiKey
      */
     public function __construct($rapidapiKey, EntityManagerInterface $em, LoggerInterface $covidLogger)
     {
@@ -90,70 +90,40 @@ class CovidApiService
         return $this->guzzleClient->request('GET', $url, $reqOptions);
     }
 
-    public function getWorldStat()
-    {
-        $response = $this->rapidApiRequest(self::URL_WORLDSTAT);
-
-        if (200 == $response->getStatusCode()) {
-            $bodyRaw = (string) $response->getBody();
-            $jsonResponse = json_decode($bodyRaw);
-
-            $statDate = new \DateTime($jsonResponse->statistic_taken_at);
-            $dayStat = $this->repoDailyStat->findOneBy(['day' => $statDate]);
-
-            if (!$dayStat instanceof DailyStat) {
-                $dayStat = new DailyStat();
-                $dayStat->loadJSON($jsonResponse, [self::class, 'prepareNumber']);
-
-                try {
-                    $this->em->persist($dayStat);
-                    $this->em->flush();
-                } catch (\Exception $exception) {
-                    $this->logger->error(sprintf('Unable to save daily stat due to error: %s', $exception->getMessage()));
-
-                    return false;
-                }
-            } else {
-                $this->logger->info(sprintf('Stat for day "%s" already present', $statDate->format('r')));
-            }
-        }
-
-        return true;
-    }
-
     private function saveCountryStat(\DateTime $statDate, Country $country, $countryData)
     {
         $cases = $this->repoCountryCase->getForCountryByDate($statDate, $country);
 
         if (!$cases instanceof CountryCase) {
             $cases = new CountryCase();
-            $cases->loadJSON($country, $statDate, $countryData, [self::class, 'prepareNumber']);
-
-            try {
-                $this->em->persist($cases);
-                $this->em->flush();
-
-                $this->logger->info(
-                    sprintf('Country %s daily stat by %s saved', $country->getName(), $statDate->format('r'))
-                );
-            } catch (\Exception $exception) {
-                $this->logger->error(
-                    sprintf('Unable to country %s daily stat by %s due to error: %s',
-                        $country->getName(),
-                        $statDate->format(StatisticsService::DATE_FORMAT),
-                        $exception->getMessage()
-                    )
-                );
-
-                return false;
-            }
         } else {
             $this->logger->info(
-                sprintf('Stat for country %s by day "%s" already present',
+                sprintf('Stat for country %s by day "%s" already present, updating...',
                     $country->getName(),
                     $statDate->format(StatisticsService::DATE_FORMAT)
                 )
             );
+        }
+
+        $cases->loadJSON($country, $statDate, $countryData, [self::class, 'prepareNumber']);
+
+        try {
+            $this->em->persist($cases);
+            $this->em->flush();
+
+            $this->logger->info(
+                sprintf('Country %s daily stat by %s saved', $country->getName(), $statDate->format('r'))
+            );
+        } catch (\Exception $exception) {
+            $this->logger->error(
+                sprintf('Unable to country %s daily stat by %s due to error: %s',
+                    $country->getName(),
+                    $statDate->format(StatisticsService::DATE_FORMAT),
+                    $exception->getMessage()
+                )
+            );
+
+            return false;
         }
 
         return true;

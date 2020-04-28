@@ -27,7 +27,7 @@ class CountryCase
     private $country;
 
     /**
-     * @ORM\Column(name="case_date", type="datetime")
+     * @ORM\Column(name="case_date", type="date")
      */
     private $caseDate;
 

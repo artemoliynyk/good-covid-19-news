@@ -19,7 +19,7 @@ class DailyStat
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="datetime", unique=true)
+     * @ORM\Column(type="date", unique=true)
      */
     private $dailyDate;
 

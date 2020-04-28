@@ -70,7 +70,12 @@ class StatisticsService
 
         /** @var Country $country */
         foreach ($countries as $country) {
+            // update records with no new recovery data
             $noDataRecords = $this->repoCountryCase->getNoRecoveredRecords($country);
+
+            // also update last records
+            $lastRecords = $this->repoCountryCase->getLastByCountry($country);
+            array_push($noDataRecords, $lastRecords);
 
             if (!empty($noDataRecords)) {
 
