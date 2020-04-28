@@ -9,10 +9,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CasesChangeRepository")
- * @ORM\Table(name="cases_change", uniqueConstraints={@UniqueConstraint(columns={"change_date", "country_id"})})
+ * @ORM\Table(name="country_cases_change", uniqueConstraints={@UniqueConstraint(columns={"change_date", "country_id"})})
  * @UniqueEntity(fields={"changeDate", "country"})
  */
-class CasesChange
+class CountryCasesChange
 {
     use ChangeTrait;
 

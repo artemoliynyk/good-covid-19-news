@@ -34,7 +34,7 @@ class Country
     private $countryCase;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CasesChange", mappedBy="country", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="CountryCasesChange", mappedBy="country", orphanRemoval=true)
      */
     private $casesChanges;
 
@@ -111,14 +111,14 @@ class Country
     }
 
     /**
-     * @return Collection|CasesChange[]
+     * @return Collection|CountryCasesChange[]
      */
     public function getCasesChanges(): Collection
     {
         return $this->casesChanges;
     }
 
-    public function addCasesChange(CasesChange $casesChange): self
+    public function addCasesChange(CountryCasesChange $casesChange): self
     {
         if (!$this->casesChanges->contains($casesChange)) {
             $this->casesChanges[] = $casesChange;
@@ -128,7 +128,7 @@ class Country
         return $this;
     }
 
-    public function removeCasesChange(CasesChange $casesChange): self
+    public function removeCasesChange(CountryCasesChange $casesChange): self
     {
         if ($this->casesChanges->contains($casesChange)) {
             $this->casesChanges->removeElement($casesChange);

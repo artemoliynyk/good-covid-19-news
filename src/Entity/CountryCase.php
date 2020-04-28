@@ -77,7 +77,7 @@ class CountryCase
     private $totalPer1m;
 
     /**
-     * @ORM\OneToOne(targetEntity="CasesChange", inversedBy="countryCase", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="CountryCasesChange", inversedBy="countryCase", cascade={"persist", "remove"})
      * @ORM\JoinColumn(onDelete="SET NULL")
      */
     private $casesChange;
@@ -280,12 +280,12 @@ class CountryCase
         $this->totalPer1m = $numberFormatFunction((isset($jsonResponse->total_cases_per1m) ? $jsonResponse->total_cases_per1m : $jsonResponse->total_cases_per_1m_population));
     }
 
-    public function getCasesChange(): ?CasesChange
+    public function getCasesChange(): ?CountryCasesChange
     {
         return $this->casesChange;
     }
 
-    public function setCasesChange(?CasesChange $casesChange): self
+    public function setCasesChange(?CountryCasesChange $casesChange): self
     {
         $this->casesChange = $casesChange;
 

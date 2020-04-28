@@ -7,9 +7,9 @@
 namespace App\Service;
 
 
-use App\Entity\CasesChange;
 use App\Entity\Country;
 use App\Entity\CountryCase;
+use App\Entity\CountryCasesChange;
 use App\Entity\DailyChange;
 use App\Entity\DailyStat;
 use App\Repository\DailyStatRepository;
@@ -139,7 +139,7 @@ class StatisticsService
             foreach ($processCases as $currentDay) {
                 $prevDay = $this->repoCountryCase->getCasesPrevDay($currentDay);
 
-                $caseChange = $currentDay->getCasesChange() ?? new CasesChange($currentDay);
+                $caseChange = $currentDay->getCasesChange() ?? new CountryCasesChange($currentDay);
 
                 $currentDate = $currentDay->getCaseDate();
 
