@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Country;
 use App\Repository\CountryCaseRepository;
+use App\Repository\CountryRepository;
 use App\Repository\DailyStatRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,16 +20,19 @@ class MainController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(DailyStatRepository $dailyStatRepository)
+    public function indexAction(DailyStatRepository $dailyStatRepository, CountryRepository $countryRepository)
     {
         $worldPopulation = $this->getParameter('world_population');
         $lastRecord = $dailyStatRepository->getLastRecord();
         $prevRecord = $dailyStatRepository->getPrevDayStat($lastRecord);
         $percent = round($lastRecord->getActive() / $worldPopulation * 100, 2);
 
+        $lastUpdate = new \DateTime($countryRepository->getLastUpdateAt());
+
         return $this->render('main/index.html.twig', [
             'world_population' => $worldPopulation,
             'last_record' => $lastRecord,
+            'last_update_date' => $lastUpdate,
             'prev_record' => $prevRecord,
             'prev_record_date' => $prevRecord->getDailyDate()->format('d F, Y'),
             'percent' => $percent,

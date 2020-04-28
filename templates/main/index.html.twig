@@ -12,7 +12,7 @@
         <div class="col">
 
             {% if last_record is not null %}
-                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_record.dailyDate|date('d F, Y') } %}Pandemic data for {date}{% endtrans %}</h3>
+                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_update_date|date('d F, Y H:i') } %}Pandemic data for {date}{% endtrans %}</h3>
 
                 <hr>
 
