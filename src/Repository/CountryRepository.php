@@ -24,6 +24,23 @@ class CountryRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('c')->orderBy('c.name', 'ASC')->getQuery()->getResult();
     }
 
+
+    public function getLastUpdateAt(): ?\DateTime
+    {
+        $qb = $this->createQueryBuilder('c');
+
+        $qb->select('c')->orderBy('c.updatedAt', 'desc')->setMaxResults(1);
+
+        /** @var Country $country */
+        try {
+            $country = $qb->getQuery()->getSingleResult();
+
+            return $country->getUpdatedAt();
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
     /**
      * Find country in database or return new instance
      *
