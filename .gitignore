@@ -33,4 +33,4 @@ yarn-error.log
 
 http-requests/http-client.env.json
 deploy/hosts.yml
-/deploy/dep
+/deploy/dep.sh
