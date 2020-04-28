@@ -25,17 +25,20 @@ class CountryRepository extends ServiceEntityRepository
     }
 
 
-    public function getLastUpdateAt()
+    public function getLastUpdateAt(): ?\DateTime
     {
         $qb = $this->createQueryBuilder('c');
 
-        $qb->select(
-            $qb->expr()->max('c.updatedAt')
-        )
-            ->setMaxResults(1)
-        ;
+        $qb->select('c')->orderBy('c.updatedAt', 'desc')->setMaxResults(1);
 
-        return $qb->getQuery()->getSingleScalarResult();
+        /** @var Country $country */
+        try {
+            $country = $qb->getQuery()->getSingleResult();
+
+            return $country->getUpdatedAt();
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 
     /**

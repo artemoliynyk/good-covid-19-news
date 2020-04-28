@@ -27,14 +27,14 @@ class MainController extends AbstractController
         $prevRecord = $dailyStatRepository->getPrevDayStat($lastRecord);
         $percent = round($lastRecord->getActive() / $worldPopulation * 100, 2);
 
-        $lastUpdate = new \DateTime($countryRepository->getLastUpdateAt());
+        $lastUpdateDate = $countryRepository->getLastUpdateAt();
 
         return $this->render('main/index.html.twig', [
             'world_population' => $worldPopulation,
             'last_record' => $lastRecord,
-            'last_update_date' => $lastUpdate,
+            'last_update_date' => $lastUpdateDate,
+
             'prev_record' => $prevRecord,
-            'prev_record_date' => $prevRecord->getDailyDate()->format('d F, Y'),
             'percent' => $percent,
         ]);
     }
@@ -47,14 +47,15 @@ class MainController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function countriesAction(CountryCaseRepository $countryCaseRepository, DailyStatRepository $dailyStatRepository)
+    public function countriesAction(CountryRepository $countryRepository, CountryCaseRepository $countryCaseRepository, DailyStatRepository $dailyStatRepository)
     {
         $lastRecord = $dailyStatRepository->getLastRecord();
 
         $countryCases = $countryCaseRepository->getAllCounries($lastRecord->getDailyDate());
+        $lastUpdateDate = $countryRepository->getLastUpdateAt();
 
         return $this->render('main/countries.html.twig', [
-            'last_record' => $lastRecord,
+            'last_update_date' => $lastUpdateDate,
             'country_cases' => $countryCases,
         ]);
     }
@@ -79,7 +80,6 @@ class MainController extends AbstractController
             'country_case' => $countryCase,
             'country_name' => $countryCase->getCountry()->getName(),
             'prev_record' => $prevRecord,
-            'prev_record_date' => $prevRecord->getCaseDate()->format('d F, Y'),
         ]);
     }
 
