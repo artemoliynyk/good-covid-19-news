@@ -76,6 +76,11 @@ class DailyStat
      */
     private $dailyChange;
 
+    public function __toString(): string
+    {
+        return $this->getId().$this->getDailyDate()->format('r');
+    }
+
     /**
      * DailyStat constructor.
      */

@@ -19,7 +19,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class ChartDataService
 {
 
-    const DATE_FORMAT = 'd F, Y H:i';
+    const DATE_FORMAT = 'd F, Y';
 
     /**
      * @var EntityManagerInterface

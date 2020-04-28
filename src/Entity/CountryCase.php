@@ -82,6 +82,12 @@ class CountryCase
      */
     private $casesChange;
 
+    public function __toString(): string
+    {
+        return $this->getId().$this->getCaseDate()->format('r').$this->getCountry()->getName();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

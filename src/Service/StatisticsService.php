@@ -76,11 +76,12 @@ class StatisticsService
             // also update last records
             $lastRecords = $this->repoCountryCase->getLastByCountry($country);
             array_push($noDataRecords, $lastRecords);
+            $processCases = array_unique($noDataRecords);
 
-            if (!empty($noDataRecords)) {
+            if (!empty($processCases)) {
 
                 /** @var CountryCase $noDataDay */
-                foreach ($noDataRecords as $noDataDay) {
+                foreach ($processCases as $noDataDay) {
                     $prevDay = $this->repoCountryCase->getCasesPrevDay($noDataDay);
 
                     $recoveredChange = 0;
@@ -125,14 +126,21 @@ class StatisticsService
 
         /** @var Country $country */
         foreach ($countries as $country) {
+            // update records with no new change data
             $casesWithoutChange = $this->repoCountryCase->getNoChangeRecords($country);
+
+            // also update last records
+            $lastRecord = $this->repoCountryCase->getLastByCountry($country);
+            array_push($casesWithoutChange, $lastRecord);
+            $processCases = array_unique($casesWithoutChange);
 
             /** @var CountryCase $currentDay */
             $changes = 0;
-            foreach ($casesWithoutChange as $currentDay) {
+            foreach ($processCases as $currentDay) {
                 $prevDay = $this->repoCountryCase->getCasesPrevDay($currentDay);
 
-                $caseChange = new CasesChange($currentDay);
+                $caseChange = $currentDay->getCasesChange() ?? new CasesChange($currentDay);
+
                 $currentDate = $currentDay->getCaseDate();
 
                 if (!is_null($prevDay)) {
@@ -197,11 +205,16 @@ class StatisticsService
             return false;
         }
 
-        /** @var DailyStatRepository $noChangeDays */
-        $noChangeDays = $this->repoDailyStat->getNoChangeDays();
+        /** @var DailyStatRepository[] $noChangeDays */
+        $noChangeDays = (array) $this->repoDailyStat->getNoChangeDays();
+
+        // add current day
+        $lastDay = $this->repoDailyStat->getLastRecord();
+        array_push($noChangeDays, $lastDay);
+        $processDays = array_unique($noChangeDays);
 
         /** @var DailyStat $currentDay */
-        foreach ($noChangeDays as $currentDay) {
+        foreach ($processDays as $currentDay) {
             $currentDate = $currentDay->getDailyDate();
 
             $dayTotals = $this->repoCountryCase->getDayTotals($currentDate);
@@ -234,12 +247,17 @@ class StatisticsService
     public function calculateDailyChange()
     {
         /** @var DailyStat[] $noChangeDays */
-        $noChangeDays = $this->repoDailyStat->getNoChangeDays();
+        $noChangeDays = (array) $this->repoDailyStat->getNoChangeDays();
+
+        // add current day
+        $lastDay = $this->repoDailyStat->getLastRecord();
+        array_push($noChangeDays, $lastDay);
+        $processDays = array_unique($noChangeDays);
 
         /** @var DailyStat $currentDay */
         $changes = 0;
-        foreach ($noChangeDays as $currentDay) {
-            $dailyChange = new DailyChange($currentDay);
+        foreach ($processDays as $currentDay) {
+            $dailyChange = $currentDay->getDailyChange() ?? new DailyChange($currentDay);
 
             $currentDate = $currentDay->getDailyDate();
             $prevDay = $this->repoDailyStat->getPrevDayStat($currentDay);

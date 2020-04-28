@@ -243,9 +243,8 @@ class CovidApiService
 
                 // terminate if no data
                 if (empty($jsonResponse->stat_by_country) || !is_array($jsonResponse->stat_by_country)) {
-                    $this->logger->error(sprintf('Daily was not received: "%s"', $bodyRaw));
-
-                    return false;
+                    $this->logger->error(sprintf('Daily was not received for %s: "%s"', $countryName, $bodyRaw));
+                    continue;
                 }
 
                 // reverse data to get oldest info first
