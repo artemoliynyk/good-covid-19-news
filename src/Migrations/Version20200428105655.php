@@ -22,7 +22,7 @@ final class Version20200428105655 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE country_cases RENAME TO country_cases_change;');
+        $this->addSql('ALTER TABLE cases_change RENAME TO country_cases_change;');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20200428105655 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE country_cases_change RENAME TO country_cases;');
+        $this->addSql('ALTER TABLE country_cases_change RENAME TO cases_change;');
     }
 }
