@@ -8,7 +8,6 @@ Encore
 
 .addEntry('app', './assets/js/app.js')
 .addEntry('dashboard', './assets/js/dashboard.js')
-.addStyleEntry('dashboard-style', './assets/scss/dashboard.scss')
 
 .addEntry('countries', './assets/js/countries.js')
 //.addStyleEntry('countries')
