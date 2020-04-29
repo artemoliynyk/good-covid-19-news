@@ -16,7 +16,9 @@
                     {{ country_name }}
                 </h2>
 
-                <h3 class="text-center">{% trans with {'{date}': country_case.country.updatedAt|date('d F, Y H:i') } %}Pandemic data for {date}{% endtrans %}</h3>
+                <h3 class="text-center">
+                    {% trans with {'last_date': country_case.country.updatedAt } %}Pandemic data for {last_date}{% endtrans %}
+                </h3>
                 <hr>
 
                 <div class="row mb-5 align-content-center">
@@ -72,7 +74,7 @@
                                     <h4 class="text-success">- {{ country_case.casesChange.newValue }}</h4>
                                     <div class="badge badge-primary">{{ country_case.newCases }} vs. {{ prev_record.newCases }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less new cases than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.caseDate} %}Less new cases than on<br>{change_date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
@@ -89,7 +91,7 @@
                                         <h4 class="text-success">+ {{ country_case.casesChange.recoveredValue }}</h4>
                                         <div class="badge badge-primary">{{ country_case.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
                                         <br>
-                                        <div class="mt-1 badge badge-info">{% trans %}More recovered than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                        <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.caseDate} %}More recovered than on<br>{change_date}{% endtrans %}</div>
                                     {% else %}
                                         {% trans %}No positive dynamic{% endtrans %}
                                     {% endif %}
@@ -108,7 +110,7 @@
                                     <h4 class="text-success">- {{ country_case.casesChange.seriousValue }}</h4>
                                     <div class="badge badge-primary">{{ country_case.serious }} vs. {{ prev_record.serious }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less serious than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.caseDate} %}Less serious than on<br>{change_date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
@@ -124,7 +126,7 @@
                                     <h4 class="text-success">- {{ country_case.casesChange.deathsValue }}</h4>
                                     <div class="badge badge-primary">{{ country_case.newDeaths }} vs. {{ prev_record.newDeaths }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less died than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.caseDate} %}Less died than on<br>{change_date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}

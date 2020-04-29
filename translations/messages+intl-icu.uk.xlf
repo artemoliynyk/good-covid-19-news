@@ -137,9 +137,9 @@
         <source>Help us page</source>
         <target>сторінку "Допомогти проекту"</target>
       </trans-unit>
-      <trans-unit id="GcMglok" resname="Pandemic data for {date}">
-        <source>Pandemic data for {date}</source>
-        <target>Дані по пандемії на {date}</target>
+      <trans-unit id="GcMglok" resname="Pandemic data for {last_date}">
+        <source>Pandemic data for {last_date}</source>
+        <target>Дані по пандемії на {last_date, date, long}</target>
       </trans-unit>
       <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
         <source>Estimated world population on 2020 – {population}</source>
@@ -229,10 +229,6 @@
         <source>Countries</source>
         <target>Країни</target>
       </trans-unit>
-      <trans-unit id="7oGKK2b" resname="Pandemic data per country by {date}">
-        <source>Pandemic data per country by {date}</source>
-        <target>Дані пандемії по країнах на {date}</target>
-      </trans-unit>
       <trans-unit id="ScJmuqq" resname="Search">
         <source>Search</source>
         <target>Пошук</target>
@@ -268,6 +264,26 @@
       <trans-unit id="4veeW2A" resname="N/A">
         <source>N/A</source>
         <target>н/д</target>
+      </trans-unit>
+      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{change_date}">
+        <source>Less new cases than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Менеше нових випадків ніж<br>{change_date, date, medium}]]></target>
+      </trans-unit>
+      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{change_date}">
+        <source>More recovered than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Більше видужавших ніж<br>{change_date, date, medium}]]></target>
+      </trans-unit>
+      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{change_date}">
+        <source>Less serious than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Менше важких ніж<br>{change_date, date, medium}]]></target>
+      </trans-unit>
+      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{change_date}">
+        <source>Less died than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Менше смертей ніж<br>{change_date, date, medium}]]></target>
+      </trans-unit>
+      <trans-unit id="AfE9gcQ" resname="chart_date">
+        <source>chart_date</source>
+        <target>{chart_date, date, short}</target>
       </trans-unit>
     </body>
   </file>
