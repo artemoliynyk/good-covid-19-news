@@ -8,7 +8,10 @@ Encore
 
 .addEntry('app', './assets/js/app.js')
 .addEntry('dashboard', './assets/js/dashboard.js')
+.addStyleEntry('dashboard-style', './assets/scss/dashboard.scss')
+
 .addEntry('countries', './assets/js/countries.js')
+//.addStyleEntry('countries')
 
 // will require an extra script tag for runtime.js
 // but, you probably want this, unless you're building a single-page app

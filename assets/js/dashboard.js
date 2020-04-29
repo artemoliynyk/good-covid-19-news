@@ -1,5 +1,7 @@
 require('chart.js');
 
+import '../scss/dashboard.scss';
+
 $(document).ready(function () {
     // active cases
     var $chartActive = $('#chart-active');
@@ -18,7 +20,7 @@ $(document).ready(function () {
             var chartActive = new Chart($chartActive[0], {
                 type: 'line',
                 options: {
-                    //aspectRatio: 1.5,
+                    maintainAspectRatio: false,
                 },
                 data: {
                     datasets: [{
@@ -53,7 +55,7 @@ $(document).ready(function () {
             var chartRecovered = new Chart($chartRecovered[0], {
                 type: 'line',
                 options: {
-                    //aspectRatio: 1.5,
+                    maintainAspectRatio: false,
                 },
                 data: {
                     datasets: [{
@@ -87,7 +89,7 @@ $(document).ready(function () {
             var chartNewDaily = new Chart($chartNewDaily[0], {
                 type: 'bar',
                 options: {
-                    //aspectRatio: 1.5,
+                    maintainAspectRatio: false,
                 },
                 data: {
                     datasets: [{
@@ -122,7 +124,7 @@ $(document).ready(function () {
             var chartRecoveredDaily = new Chart($chartRecoveredDaily[0], {
                 type: 'bar',
                 options: {
-                    //aspectRatio: 1.5,
+                    maintainAspectRatio: false,
                 },
                 data: {
                     datasets: [{
