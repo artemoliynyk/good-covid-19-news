@@ -63,6 +63,59 @@
                     </div>
                 </div>
 
+                <h4 class="font-weight-bold text-center">{% trans %}Top 5 countries{% endtrans %}</h4>
+                <div class="row mb-5">
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card">
+                            <div class="card-header text-center bg-danger text-white"><b>{% trans %}Top active cases{% endtrans %}</b></div>
+                            <div class="card-body text-danger">
+                                <table class="table table-sm">
+                                    {% for case in top_active %}
+                                        <tr>
+                                            <td class="w-50">{{ case.country.name }}</td>
+                                            <td>{{ case.active|number }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card">
+                            <div class="card-header text-center bg-success text-dark"><b>{% trans %}Top total recovered{% endtrans %}</b></div>
+                            <div class="card-body text-success">
+                                <table class="table table-sm">
+                                    {% for case in top_recovered %}
+                                        <tr>
+                                            <td class="w-50">{{ case.country.name }}</td>
+                                            <td>{{ case.recovered|number }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+                        <div class="card">
+                            <div class="card-header text-center bg-primary text-dark"><b>{% trans %}Top recovered today{% endtrans %}</b></div>
+                            <div class="card-body text-primary">
+                                <table class="table table-sm">
+                                    {% for case in top_new_recovered %}
+                                        <tr>
+                                            <td class="w-50">{{ case.country.name }}</td>
+                                            <td>{{ case.newRecovered|number_signed }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <h4 class="font-weight-bold text-center">{% trans %}Daily change{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-10 offset-1 mb-4 col-lg-6 offset-lg-0 col-xl-3">
@@ -89,7 +142,8 @@
                                     <h4 class="text-success">+ {{ last_record.dailyChange.recoveredValue }}</h4>
                                     <div class="badge badge-primary">{{ last_record.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.dailyDate} %}More recovered than on<br>{change_date}{% endtrans %}</div>                                {% else %}
+                                    <div class="mt-1 badge badge-info">{% trans with {'change_date': prev_record.dailyDate} %}More recovered than on<br>{change_date}{% endtrans %}
+                                    </div>                                {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
                             </div>

@@ -206,4 +206,56 @@ class CountryCaseRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+
+    /**
+     * @param int $limit
+     * @return CountryCase[]
+     */
+    public function getTopActive(int $limit = 5)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->orderBy('cc.caseDate', 'desc')
+            ->addOrderBy('cc.active', 'desc')
+            ->setMaxResults($limit);
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @param int $limit
+     * @return CountryCase[]
+     */
+    public function getTopRecovered(int $limit = 5)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->orderBy('cc.caseDate', 'desc')
+            ->addOrderBy('cc.recovered', 'desc')
+            ->setMaxResults($limit);
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @param int $limit
+     * @return CountryCase[]
+     */
+    public function getTopNewRecovered(int $limit = 5)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->orderBy('cc.caseDate', 'desc')
+            ->addOrderBy('cc.newRecovered', 'desc')
+            ->setMaxResults($limit);
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
 }

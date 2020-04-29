@@ -20,7 +20,7 @@ class MainController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction(DailyStatRepository $dailyStatRepository, CountryRepository $countryRepository)
+    public function indexAction(DailyStatRepository $dailyStatRepository, CountryRepository $countryRepository, CountryCaseRepository $countryCaseRepository)
     {
         $worldPopulation = $this->getParameter('world_population');
         $lastRecord = $dailyStatRepository->getLastRecord();
@@ -29,6 +29,10 @@ class MainController extends AbstractController
 
         $lastUpdateDate = $countryRepository->getLastUpdateAt();
 
+        $topActive = $countryCaseRepository->getTopActive();
+        $topRecovered = $countryCaseRepository->getTopRecovered();
+        $topNewRecovered = $countryCaseRepository->getTopNewRecovered();
+
         return $this->render('main/index.html.twig', [
             'world_population' => $worldPopulation,
             'last_record' => $lastRecord,
@@ -36,6 +40,11 @@ class MainController extends AbstractController
 
             'prev_record' => $prevRecord,
             'percent' => $percent,
+
+
+            'top_active' => $topActive,
+            'top_recovered' => $topRecovered,
+            'top_new_recovered' => $topNewRecovered,
         ]);
     }
 
