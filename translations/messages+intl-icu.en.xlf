@@ -141,7 +141,7 @@
         <source>Help us page</source>
         <target>Help us page</target>
       </trans-unit>
-      <trans-unit id="GcMglok" resname="Pandemic data for {last_date}">
+      <trans-unit id="uAkd3xK" resname="Pandemic data for {last_date}">
         <source>Pandemic data for {last_date}</source>
         <target>Pandemic data for {last_date, date, long}</target>
       </trans-unit>
@@ -265,25 +265,29 @@
         <source>Sorry, no data available</source>
         <target>Sorry, no data available</target>
       </trans-unit>
-      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{change_date}">
+      <trans-unit id="JYakapm" resname="Less new cases than on&lt;br&gt;{change_date}">
         <source>Less new cases than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Less new cases than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{change_date}">
+      <trans-unit id="a7lCTXb" resname="More recovered than on&lt;br&gt;{change_date}">
         <source>More recovered than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[More recovered than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{change_date}">
+      <trans-unit id="pLw7TRL" resname="Less serious than on&lt;br&gt;{change_date}">
         <source>Less serious than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Less serious than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{change_date}">
+      <trans-unit id="4Ul5Wdy" resname="Less died than on&lt;br&gt;{change_date}">
         <source>Less died than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Less died than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="0">
+      <trans-unit id="AfE9gcQ" resname="chart_date">
         <source>chart_date</source>
         <target>{chart_date, date, short}</target>
+      </trans-unit>
+      <trans-unit id="qMn_z4L" resname="meta_description">
+        <source>meta_description</source>
+        <target>Positive statistic about COVID-19 pandemic</target>
       </trans-unit>
     </body>
   </file>

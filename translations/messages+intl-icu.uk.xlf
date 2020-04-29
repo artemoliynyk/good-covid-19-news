@@ -23,7 +23,7 @@
       </trans-unit>
       <trans-unit id="waCGJlY" resname="New recovered">
         <source>New recovered</source>
-        <target>Нові видужавші</target>
+        <target>Нові одужавші</target>
       </trans-unit>
       <trans-unit id="Z7aWRoY" resname="Dashboard">
         <source>Dashboard</source>
@@ -137,7 +137,7 @@
         <source>Help us page</source>
         <target>сторінку "Допомогти проекту"</target>
       </trans-unit>
-      <trans-unit id="GcMglok" resname="Pandemic data for {last_date}">
+      <trans-unit id="uAkd3xK" resname="Pandemic data for {last_date}">
         <source>Pandemic data for {last_date}</source>
         <target>Дані по пандемії на {last_date, date, long}</target>
       </trans-unit>
@@ -175,7 +175,7 @@
       </trans-unit>
       <trans-unit id="ggppOnl" resname="More recovered than on">
         <source>More recovered than on</source>
-        <target>Більше видужавших ніж</target>
+        <target>Більше одужавших ніж</target>
       </trans-unit>
       <trans-unit id="opNMxJF" resname="Serious cases">
         <source>Serious cases</source>
@@ -199,7 +199,7 @@
       </trans-unit>
       <trans-unit id="hd9XLRu" resname="Recovered by day">
         <source>Recovered by day</source>
-        <target>Видужавші по днях</target>
+        <target>Одужавші по днях</target>
       </trans-unit>
       <trans-unit id="YPtZKnl" resname="New cases by day">
         <source>New cases by day</source>
@@ -265,25 +265,29 @@
         <source>N/A</source>
         <target>н/д</target>
       </trans-unit>
-      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{change_date}">
+      <trans-unit id="JYakapm" resname="Less new cases than on&lt;br&gt;{change_date}">
         <source>Less new cases than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Менеше нових випадків ніж<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{change_date}">
+      <trans-unit id="a7lCTXb" resname="More recovered than on&lt;br&gt;{change_date}">
         <source>More recovered than on&lt;br&gt;{change_date}</source>
-        <target><![CDATA[Більше видужавших ніж<br>{change_date, date, medium}]]></target>
+        <target><![CDATA[Більше одужавших ніж<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{change_date}">
+      <trans-unit id="pLw7TRL" resname="Less serious than on&lt;br&gt;{change_date}">
         <source>Less serious than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Менше важких ніж<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{change_date}">
+      <trans-unit id="4Ul5Wdy" resname="Less died than on&lt;br&gt;{change_date}">
         <source>Less died than on&lt;br&gt;{change_date}</source>
         <target><![CDATA[Менше смертей ніж<br>{change_date, date, medium}]]></target>
       </trans-unit>
       <trans-unit id="AfE9gcQ" resname="chart_date">
         <source>chart_date</source>
         <target>{chart_date, date, short}</target>
+      </trans-unit>
+      <trans-unit id="qMn_z4L" resname="meta_description">
+        <source>meta_description</source>
+        <target>Позитивна статистика пандемії COVID-19</target>
       </trans-unit>
     </body>
   </file>
