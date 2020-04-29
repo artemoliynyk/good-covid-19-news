@@ -140,7 +140,7 @@
                     <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered total{% endtrans %}</h4>
                     <div class="row mb-5">
                         <div class="col-12 col-lg-10 offset-lg-1">
-                            <canvas id="chart-recovered" height="180" data-url="{{ url('json_country_recovered', {'country': country_case.country.id}) }}"></canvas>
+                            <canvas class="chart-canvas" id="chart-recovered" height="180" data-url="{{ url('json_country_recovered', {'country': country_case.country.id}) }}"></canvas>
                         </div>
                     </div>
 
@@ -149,7 +149,7 @@
                     <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered by day{% endtrans %}</h4>
                     <div class="row mb-5">
                         <div class="col-12 col-lg-10 offset-lg-1">
-                            <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_country_recovered_daily', {'country': country_case.country.id}) }}"></canvas>
+                            <canvas class="chart-canvas" id="chart-recovered-daily" height="180" data-url="{{ url('json_country_recovered_daily', {'country': country_case.country.id}) }}"></canvas>
                         </div>
                     </div>
 
@@ -159,7 +159,7 @@
                 <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Active cases{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-active" height="180" data-url="{{ url('json_country_active_cases', {'country': country_case.country.id}) }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-active" height="180" data-url="{{ url('json_country_active_cases', {'country': country_case.country.id}) }}"></canvas>
                     </div>
                 </div>
 
@@ -168,7 +168,7 @@
                 <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}New cases by day{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-new-daily" height="180" data-url="{{ url('json_country_new_daily', {'country': country_case.country.id}) }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-new-daily" height="180" data-url="{{ url('json_country_new_daily', {'country': country_case.country.id}) }}"></canvas>
                     </div>
                 </div>
             {% else %}
