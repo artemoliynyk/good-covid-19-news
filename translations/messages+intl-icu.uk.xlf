@@ -265,6 +265,10 @@
         <source>Death&lt;br&gt;dynamic</source>
         <target><![CDATA[Динаміка<br>смертей]]></target>
       </trans-unit>
+      <trans-unit id="4veeW2A" resname="N/A">
+        <source>N/A</source>
+        <target>н/д</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

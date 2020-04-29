@@ -21,6 +21,8 @@ class CountryCase
     private $id;
 
     /**
+     * @var Country
+     *
      * @ORM\ManyToOne(targetEntity="App\Entity\Country", inversedBy="countryCase", cascade={"persist"})
      * @ORM\JoinColumn(name="country_id", onDelete="CASCADE")
      */

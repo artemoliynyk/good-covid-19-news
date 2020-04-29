@@ -6,6 +6,7 @@ use App\Entity\Country;
 use App\Entity\CountryCase;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use function Doctrine\ORM\QueryBuilder;
 
 /**
  * @method CountryCase|null find($id, $lockMode = null, $lockVersion = null)
@@ -171,12 +172,15 @@ class CountryCaseRepository extends ServiceEntityRepository
      * @param Country $country
      * @return CountryCase
      */
-    public function getLastByCountry(Country $country)
+    public function getLastByCountryWithChange(Country $country)
     {
         $qb = $this->createQueryBuilder('cc');
 
         $qb->select('cc')
             ->where('cc.country = :country')
+            ->andWhere(
+                $qb->expr()->isNotNull('cc.casesChange')
+            )
             ->setParameters([
                 'country' => $country,
             ])

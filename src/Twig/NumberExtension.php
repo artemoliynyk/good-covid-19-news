@@ -18,12 +18,22 @@ class NumberExtension extends AbstractExtension
 
     public function formatNumber($value)
     {
+        // process only numbers
+        if (!is_numeric($value)) {
+            return $value;
+        }
+
         return number_format($value, 0, ".", " ");
     }
 
 
     public function signedNumber($value)
     {
+        // process only numbers
+        if (!is_numeric($value)) {
+            return $value;
+        }
+
         if (0 === $value) {
             return 0;
         }

@@ -38,6 +38,13 @@ class Country
      */
     private $casesChanges;
 
+    /**
+     * @var bool
+     * @ORM\Column(type="boolean", nullable=true, options={"default": true})
+     */
+    private $dataRecovered;
+
+
     public function __construct($name)
     {
         $this->countryCase = new ArrayCollection();
@@ -140,4 +147,21 @@ class Country
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function hasDataRecovered(): ?bool
+    {
+        return $this->dataRecovered;
+    }
+
+    /**
+     * @param bool $dataRecovered
+     */
+    public function setDataRecovered(bool $dataRecovered): void
+    {
+        $this->dataRecovered = $dataRecovered;
+    }
+
 }

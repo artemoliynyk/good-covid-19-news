@@ -72,7 +72,7 @@ class MainController extends AbstractController
      */
     public function countryViewAction(Country $country, CountryCaseRepository $countryCaseRepository)
     {
-        $countryCase = $countryCaseRepository->getLastByCountry($country);
+        $countryCase = $countryCaseRepository->getLastByCountryWithChange($country);
         $prevRecord = $countryCaseRepository->getCasesPrevDay($countryCase);
 
 

@@ -19,7 +19,7 @@
                 <h3 class="text-center">{% trans with {'{date}': country_case.country.updatedAt|date('d F, Y H:i') } %}Pandemic data for {date}{% endtrans %}</h3>
                 <hr>
 
-                <div class="row mb-5">
+                <div class="row mb-5 align-content-center">
                     <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
                         <div class="card text-center ">
                             <div class="card-header bg-warning text-dark"><b>{% trans %}Active cases{% endtrans %}</b></div>
@@ -36,7 +36,11 @@
                             <div class="card-header bg-primary text-dark"><b>{% trans %}Total recovered{% endtrans %}</b></div>
                             <div class="card-body">
                                 <h4 class="font-weight-bold text-primary">
-                                    {{ country_case.recovered|number }}
+                                    {% if country_case.country.dataRecovered %}
+                                        {{ country_case.recovered|number }}
+                                    {% else %}
+                                        {% trans %}N/A{% endtrans %}
+                                    {% endif %}
                                 </h4>
                             </div>
                         </div>
@@ -47,7 +51,11 @@
                             <div class="card-header bg-info text-dark"><b>{% trans %}New recovered{% endtrans %}</b></div>
                             <div class="card-body">
                                 <h4 class="font-weight-bold text-info">
-                                    +{{ country_case.newRecovered|number }}
+                                    {% if country_case.country.dataRecovered %}
+                                        +{{ country_case.newRecovered|number }}
+                                    {% else %}
+                                        {% trans %}N/A{% endtrans %}
+                                    {% endif %}
                                 </h4>
                             </div>
                         </div>
@@ -76,13 +84,17 @@
                         <div class="card text-center">
                             <div class="card-header bg-success text-dark"><b>{% trans %}Daily recovered{% endtrans %}</b></div>
                             <div class="card-body">
-                                {% if 0 < country_case.casesChange.recovered %}
-                                    <h4 class="text-success">+ {{ country_case.casesChange.recoveredValue }}</h4>
-                                    <div class="badge badge-primary">{{ country_case.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
-                                    <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}More recovered than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                {% if country_case.country.dataRecovered %}
+                                    {% if 0 < country_case.casesChange.recovered %}
+                                        <h4 class="text-success">+ {{ country_case.casesChange.recoveredValue }}</h4>
+                                        <div class="badge badge-primary">{{ country_case.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
+                                        <br>
+                                        <div class="mt-1 badge badge-info">{% trans %}More recovered than on{% endtrans %}<br>{{ prev_record.caseDate|date('d F, Y') }}</div>
+                                    {% else %}
+                                        {% trans %}No positive dynamic{% endtrans %}
+                                    {% endif %}
                                 {% else %}
-                                    {% trans %}No positive dynamic{% endtrans %}
+                                    {% trans %}N/A{% endtrans %}
                                 {% endif %}
                             </div>
                         </div>
@@ -122,23 +134,25 @@
                 </div>
 
 
-                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered total{% endtrans %}</h4>
-                <div class="row mb-5">
-                    <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-recovered" height="180" data-url="{{ url('json_country_recovered', {'country': country_case.country.id}) }}"></canvas>
+                {% if country_case.country.dataRecovered %}
+                    <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered total{% endtrans %}</h4>
+                    <div class="row mb-5">
+                        <div class="col-12 col-lg-10 offset-lg-1">
+                            <canvas id="chart-recovered" height="180" data-url="{{ url('json_country_recovered', {'country': country_case.country.id}) }}"></canvas>
+                        </div>
                     </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered by day{% endtrans %}</h4>
-                <div class="row mb-5">
-                    <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_country_recovered_daily', {'country': country_case.country.id}) }}"></canvas>
+                    <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Recovered by day{% endtrans %}</h4>
+                    <div class="row mb-5">
+                        <div class="col-12 col-lg-10 offset-lg-1">
+                            <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_country_recovered_daily', {'country': country_case.country.id}) }}"></canvas>
+                        </div>
                     </div>
-                </div>
 
-                <br>
+                    <br>
+                {% endif %}
 
                 <h4 class="font-weight-bold text-center">{{ country_name }}: {% trans %}Active cases{% endtrans %}</h4>
                 <div class="row mb-5">

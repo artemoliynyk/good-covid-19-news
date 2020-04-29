@@ -95,7 +95,7 @@ trait ChangeTrait
     public function getNewValue(): ?string
     {
         $value = abs($this->new);
-        if ($this->newPercent !== 0) {
+        if ($this->newPercent != 0) {
             $value = abs($this->newPercent)."%";
         }
 
@@ -150,7 +150,7 @@ trait ChangeTrait
     public function getDeathsValue(): ?string
     {
         $value = abs($this->deaths);
-        if ($this->deathsPercent !== 0) {
+        if ($this->deathsPercent != 0) {
             $value = abs($this->deathsPercent)."%";
         }
 
@@ -205,7 +205,7 @@ trait ChangeTrait
     public function getRecoveredValue(): ?string
     {
         $value = abs($this->recovered);
-        if ($this->recoveredPercent !== 0) {
+        if ($this->recoveredPercent != 0) {
             $value = abs($this->recoveredPercent)."%";
         }
 
@@ -260,7 +260,7 @@ trait ChangeTrait
     public function getSeriousValue(): ?string
     {
         $value = abs($this->serious);
-        if ($this->seriousPercent !== 0) {
+        if ($this->seriousPercent != 0) {
             $value = abs($this->seriousPercent)."%";
         }
 

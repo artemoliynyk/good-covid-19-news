@@ -74,7 +74,7 @@ class StatisticsService
             $noDataRecords = $this->repoCountryCase->getNoRecoveredRecords($country);
 
             // also update last records
-            $lastRecords = $this->repoCountryCase->getLastByCountry($country);
+            $lastRecords = $this->repoCountryCase->getLastByCountryWithChange($country);
             array_push($noDataRecords, $lastRecords);
             $processCases = array_unique($noDataRecords);
 
@@ -130,7 +130,7 @@ class StatisticsService
             $casesWithoutChange = $this->repoCountryCase->getNoChangeRecords($country);
 
             // also update last records
-            $lastRecord = $this->repoCountryCase->getLastByCountry($country);
+            $lastRecord = $this->repoCountryCase->getLastByCountryWithChange($country);
             array_push($casesWithoutChange, $lastRecord);
             $processCases = array_unique($casesWithoutChange);
 

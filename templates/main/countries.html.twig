@@ -46,14 +46,23 @@
                                 {{ case.newCases|number_signed }}
                             </td>
 
-                            <td data-order="{{ case.recovered }}">
-                                {{ case.recovered|number }}
-                            </td>
+                            {% if case.country.dataRecovered %}
+                                <td data-order="{{ case.recovered }}">
+                                    {{ case.recovered|number }}
+                                </td>
 
-                            {% set change_recovered = case.casesChange.recovered %}
-                            <td data-order="{{ change_recovered }}" class="text-white {{ change_recovered < 0 ? 'bg-danger' : 'bg-success' }}">
-                                {{ change_recovered|number_signed }}
-                            </td>
+                                {% set change_recovered = case.casesChange.recovered %}
+                                <td data-order="{{ change_recovered }}" class="text-white {{ change_recovered < 0 ? 'bg-danger' : 'bg-success' }}">
+                                    {{ change_recovered|number_signed }}
+                                </td>
+                            {% else %}
+                                <td class="text-center">
+                                    {% trans %}N/A{% endtrans %}
+                                </td>
+                                <td class="text-center">
+                                    {% trans %}N/A{% endtrans %}
+                                </td>
+                            {% endif %}
 
                             <td data-order="{{ case.deaths }}">
                                 {{ case.deaths|number }}
