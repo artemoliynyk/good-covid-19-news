@@ -143,7 +143,7 @@
       </trans-unit>
       <trans-unit id="GcMglok" resname="Pandemic data for {date}">
         <source>Pandemic data for {date}</source>
-        <target>Pandemic data for {date}</target>
+        <target>Pandemic data for {date, date}</target>
       </trans-unit>
       <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
         <source>Estimated world population on 2020 – {population}</source>
@@ -212,6 +212,78 @@
       <trans-unit id="RG9Ni7y" resname="Sorry, something goes wrong with the site">
         <source>Sorry, something goes wrong with the site</source>
         <target>Sorry, something goes wrong with the site</target>
+      </trans-unit>
+      <trans-unit id="j69_x6s" resname="Countries">
+        <source>Countries</source>
+        <target>Countries</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Language</target>
+      </trans-unit>
+      <trans-unit id="bfgsSTB" resname="Important notice!">
+        <source>Important notice!</source>
+        <target>Important notice!</target>
+      </trans-unit>
+      <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
+        <source>Site use cookies and other essential web technologies.</source>
+        <target>Site use cookies and other essential web technologies.</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Country</target>
+      </trans-unit>
+      <trans-unit id="4veeW2A" resname="N/A">
+        <source>N/A</source>
+        <target>N/A</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>Active</target>
+      </trans-unit>
+      <trans-unit id="GP3VSbL" resname="New">
+        <source>New</source>
+        <target>New</target>
+      </trans-unit>
+      <trans-unit id="Rqne0qF" resname="Recovered&lt;br&gt;dynamic">
+        <source>Recovered&lt;br&gt;dynamic</source>
+        <target><![CDATA[Recovered<br>dynamic]]></target>
+      </trans-unit>
+      <trans-unit id="M0EVFYk" resname="Death&lt;br&gt;dynamic">
+        <source>Death&lt;br&gt;dynamic</source>
+        <target><![CDATA[__Death<br>dynamic]]></target>
+      </trans-unit>
+      <trans-unit id="wXPaLCp" resname="Serious">
+        <source>Serious</source>
+        <target>Serious</target>
+      </trans-unit>
+      <trans-unit id="kQwULcO" resname="Sorry, no data available">
+        <source>Sorry, no data available</source>
+        <target>Sorry, no data available</target>
+      </trans-unit>
+      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{date}">
+        <source>Less new cases than on&lt;br&gt;{date}</source>
+        <target><![CDATA[Less new cases than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{date}">
+        <source>More recovered than on&lt;br&gt;{date}</source>
+        <target><![CDATA[More recovered than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{date}">
+        <source>Less serious than on&lt;br&gt;{date}</source>
+        <target><![CDATA[Less serious than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{date}">
+        <source>Less died than on&lt;br&gt;{date}</source>
+        <target><![CDATA[Less died than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="0">
+        <source>chart_date</source>
+        <target>{date, date}</target>
       </trans-unit>
     </body>
   </file>

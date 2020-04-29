@@ -12,8 +12,9 @@
         <div class="col">
 
             {% if last_record is not null %}
-                <h3 class="font-weight-bold text-center">{% trans with {'{date}': last_update_date|date('d F, Y H:i') } %}Pandemic data for {date}{% endtrans %}</h3>
-
+                <h3 class="font-weight-bold text-center">
+                    {% trans with {'date': last_update_date } %}Pandemic data for {date}{% endtrans %}
+                </h3>
                 <hr>
 
                 <div class="row mb-5">
@@ -67,7 +68,7 @@
                                     <h4 class="text-success">- {{ last_record.dailyChange.newValue }}</h4>
                                     <div class="badge badge-primary">{{ last_record.newCases }} vs. {{ prev_record.newCases }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less new cases than on{% endtrans %}<br>{{ prev_record.dailyDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'date': prev_record.dailyDate} %}Less new cases than on<br>{date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
@@ -83,8 +84,7 @@
                                     <h4 class="text-success">+ {{ last_record.dailyChange.recoveredValue }}</h4>
                                     <div class="badge badge-primary">{{ last_record.newRecovered }} vs. {{ prev_record.newRecovered }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}More recovered than on{% endtrans %}<br>{{ prev_record.dailyDate|date('d F, Y') }}</div>
-                                {% else %}
+                                    <div class="mt-1 badge badge-info">{% trans with {'date': prev_record.dailyDate} %}More recovered than on<br>{date}{% endtrans %}</div>                                {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
                             </div>
@@ -99,7 +99,7 @@
                                     <h4 class="text-success">- {{ last_record.dailyChange.seriousValue }}</h4>
                                     <div class="badge badge-primary">{{ last_record.serious }} vs. {{ prev_record.serious }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less serious than on{% endtrans %}<br>{{ prev_record.dailyDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'date': prev_record.dailyDate} %}Less serious than on<br>{date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}
@@ -115,7 +115,7 @@
                                     <h4 class="text-success">- {{ last_record.dailyChange.deathsValue }}</h4>
                                     <div class="badge badge-primary">{{ last_record.newDeaths }} vs. {{ prev_record.newDeaths }}</div>
                                     <br>
-                                    <div class="mt-1 badge badge-info">{% trans %}Less died than on{% endtrans %}<br>{{ prev_record.dailyDate|date('d F, Y') }}</div>
+                                    <div class="mt-1 badge badge-info">{% trans with {'date': prev_record.dailyDate} %}Less died than on<br>{date}{% endtrans %}</div>
                                 {% else %}
                                     {% trans %}No positive dynamic{% endtrans %}
                                 {% endif %}

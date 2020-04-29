@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="ru" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -44,10 +44,6 @@
       <trans-unit id="60ezuaD" resname="Help project">
         <source>Help project</source>
         <target>__Help project</target>
-      </trans-unit>
-      <trans-unit id="pP5lJk7" resname="Language">
-        <source>Language</source>
-        <target>__Language</target>
       </trans-unit>
       <trans-unit id="emWLRn4" resname="Hi! I believe you can help the project.">
         <source>Hi! I believe you can help the project.</source>
@@ -93,10 +89,6 @@
         <source>Want to share ideas or discuss projet? – Join chat chanel on</source>
         <target>__Want to share ideas or discuss projet? – Join chat chanel on</target>
       </trans-unit>
-      <trans-unit id="bfgsSTB" resname="Important notice!">
-        <source>Important notice!</source>
-        <target>__Important notice!</target>
-      </trans-unit>
       <trans-unit id="4_TT_Ss" resname="All information on this site obtained from a free public API">
         <source>All information on this site obtained from a free public API</source>
         <target>__All information on this site obtained from a free public API</target>
@@ -113,9 +105,9 @@
         <source>People can still get infected and die every day! Keep safe and stay home!</source>
         <target>__People can still get infected and die every day! Keep safe and stay home!</target>
       </trans-unit>
-      <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
-        <source>Site use cookies and other essential web technologies.</source>
-        <target>__Site use cookies and other essential web technologies.</target>
+      <trans-unit id="JP.te9I" resname="Contact me">
+        <source>Contact me</source>
+        <target>__Contact me</target>
       </trans-unit>
       <trans-unit id="8IXuhlc" resname="Go to dashboard">
         <source>Go to dashboard</source>
@@ -151,7 +143,7 @@
       </trans-unit>
       <trans-unit id="GcMglok" resname="Pandemic data for {date}">
         <source>Pandemic data for {date}</source>
-        <target>__Pandemic data for {date}</target>
+        <target>__Pandemic data for {date, date}</target>
       </trans-unit>
       <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
         <source>Estimated world population on 2020 – {population}</source>
@@ -220,6 +212,78 @@
       <trans-unit id="RG9Ni7y" resname="Sorry, something goes wrong with the site">
         <source>Sorry, something goes wrong with the site</source>
         <target>__Sorry, something goes wrong with the site</target>
+      </trans-unit>
+      <trans-unit id="j69_x6s" resname="Countries">
+        <source>Countries</source>
+        <target>__Countries</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>__Language</target>
+      </trans-unit>
+      <trans-unit id="bfgsSTB" resname="Important notice!">
+        <source>Important notice!</source>
+        <target>__Important notice!</target>
+      </trans-unit>
+      <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
+        <source>Site use cookies and other essential web technologies.</source>
+        <target>__Site use cookies and other essential web technologies.</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>__Country</target>
+      </trans-unit>
+      <trans-unit id="4veeW2A" resname="N/A">
+        <source>N/A</source>
+        <target>__N/A</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>__Search</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>__Active</target>
+      </trans-unit>
+      <trans-unit id="GP3VSbL" resname="New">
+        <source>New</source>
+        <target>__New</target>
+      </trans-unit>
+      <trans-unit id="Rqne0qF" resname="Recovered&lt;br&gt;dynamic">
+        <source>Recovered&lt;br&gt;dynamic</source>
+        <target><![CDATA[__Recovered<br>dynamic]]></target>
+      </trans-unit>
+      <trans-unit id="M0EVFYk" resname="Death&lt;br&gt;dynamic">
+        <source>Death&lt;br&gt;dynamic</source>
+        <target><![CDATA[____Death<br>dynamic]]></target>
+      </trans-unit>
+      <trans-unit id="wXPaLCp" resname="Serious">
+        <source>Serious</source>
+        <target>__Serious</target>
+      </trans-unit>
+      <trans-unit id="kQwULcO" resname="Sorry, no data available">
+        <source>Sorry, no data available</source>
+        <target>__Sorry, no data available</target>
+      </trans-unit>
+      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{date}">
+        <source>Less new cases than on&lt;br&gt;{date}</source>
+        <target><![CDATA[__Less new cases than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{date}">
+        <source>More recovered than on&lt;br&gt;{date}</source>
+        <target><![CDATA[__More recovered than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{date}">
+        <source>Less serious than on&lt;br&gt;{date}</source>
+        <target><![CDATA[__Less serious than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{date}">
+        <source>Less died than on&lt;br&gt;{date}</source>
+        <target><![CDATA[__Less died than on<br>{date, date}]]></target>
+      </trans-unit>
+      <trans-unit id="0">
+        <source>chart_date</source>
+        <target>__{date, date}</target>
       </trans-unit>
     </body>
   </file>
