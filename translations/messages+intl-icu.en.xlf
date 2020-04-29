@@ -141,9 +141,9 @@
         <source>Help us page</source>
         <target>Help us page</target>
       </trans-unit>
-      <trans-unit id="GcMglok" resname="Pandemic data for {date}">
-        <source>Pandemic data for {date}</source>
-        <target>Pandemic data for {date, date}</target>
+      <trans-unit id="GcMglok" resname="Pandemic data for {last_date}">
+        <source>Pandemic data for {last_date}</source>
+        <target>Pandemic data for {last_date, date, long}</target>
       </trans-unit>
       <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
         <source>Estimated world population on 2020 – {population}</source>
@@ -265,25 +265,25 @@
         <source>Sorry, no data available</source>
         <target>Sorry, no data available</target>
       </trans-unit>
-      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{date}">
-        <source>Less new cases than on&lt;br&gt;{date}</source>
-        <target><![CDATA[Less new cases than on<br>{date, date}]]></target>
+      <trans-unit id="uGBf68I" resname="Less new cases than on&lt;br&gt;{change_date}">
+        <source>Less new cases than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Less new cases than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{date}">
-        <source>More recovered than on&lt;br&gt;{date}</source>
-        <target><![CDATA[More recovered than on<br>{date, date}]]></target>
+      <trans-unit id="0mKgEqE" resname="More recovered than on&lt;br&gt;{change_date}">
+        <source>More recovered than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[More recovered than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{date}">
-        <source>Less serious than on&lt;br&gt;{date}</source>
-        <target><![CDATA[Less serious than on<br>{date, date}]]></target>
+      <trans-unit id="ZhJ_H4G" resname="Less serious than on&lt;br&gt;{change_date}">
+        <source>Less serious than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Less serious than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
-      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{date}">
-        <source>Less died than on&lt;br&gt;{date}</source>
-        <target><![CDATA[Less died than on<br>{date, date}]]></target>
+      <trans-unit id="kP1nVIJ" resname="Less died than on&lt;br&gt;{change_date}">
+        <source>Less died than on&lt;br&gt;{change_date}</source>
+        <target><![CDATA[Less died than on<br>{change_date, date, medium}]]></target>
       </trans-unit>
       <trans-unit id="0">
         <source>chart_date</source>
-        <target>{date, date}</target>
+        <target>{chart_date, date, short}</target>
       </trans-unit>
     </body>
   </file>

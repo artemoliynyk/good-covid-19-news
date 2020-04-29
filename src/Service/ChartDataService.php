@@ -80,7 +80,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getDailyDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getDailyDate()]);
             $cases[$day] = $dayData->getActive();
         }
 
@@ -97,7 +97,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getDailyDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getDailyDate()]);
             $cases[$day] = $dayData->getRecovered();
         }
 
@@ -114,7 +114,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getDailyDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getDailyDate()]);
             $cases[$day] = $dayData->getNewCases();
         }
 
@@ -131,7 +131,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoDailyStat->getOrdered();
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getDailyDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getDailyDate()]);
             $cases[$day] = $dayData->getNewRecovered();
         }
 
@@ -149,7 +149,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getCaseDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getCaseDate()]);
             $cases[$day] = $dayData->getActive();
         }
 
@@ -166,7 +166,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getCaseDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getCaseDate()]);
             $cases[$day] = $dayData->getRecovered();
         }
 
@@ -183,7 +183,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getCaseDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getCaseDate()]);
             $cases[$day] = $dayData->getNewCases();
         }
 
@@ -200,7 +200,7 @@ class ChartDataService
         $cases = [];
         $lastRecord = $this->repoCountryCase->getCountryOrdered($country);
         foreach ($lastRecord as $dayData) {
-            $day = $this->translator->trans('chart_date', ['date' => $dayData->getCaseDate()]);
+            $day = $this->translator->trans('chart_date', ['chart_date' => $dayData->getCaseDate()]);
             $cases[$day] = $dayData->getNewRecovered();
         }
 
