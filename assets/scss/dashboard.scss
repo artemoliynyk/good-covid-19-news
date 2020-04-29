@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.chart-canvas {
+    min-height: 300px;
+
+    @include media-breakpoint-up(sm) {
+        min-height: 400px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        min-height: 500px;
+    }
+}

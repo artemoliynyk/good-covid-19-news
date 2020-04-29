@@ -7,6 +7,11 @@
     {{ encore_entry_script_tags('dashboard') }}
 {% endblock %}
 
+{% block style %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('dashboard-style') }}
+{% endblock style %}
+
 {% block body %}
     <div class="row">
         <div class="col">
@@ -128,7 +133,7 @@
                 <h4 class="font-weight-bold text-center">{% trans %}Recovered total{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-recovered" height="180" data-url="{{ url('json_recovered') }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-recovered" height="180" data-url="{{ url('json_recovered') }}"></canvas>
                     </div>
                 </div>
 
@@ -137,7 +142,7 @@
                 <h4 class="font-weight-bold text-center">{% trans %}Recovered by day{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-recovered-daily" height="180" data-url="{{ url('json_recovered_daily') }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-recovered-daily" height="180" data-url="{{ url('json_recovered_daily') }}"></canvas>
                     </div>
                 </div>
 
@@ -146,7 +151,7 @@
                 <h4 class="font-weight-bold text-center">{% trans %}Active cases{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-active" height="180" data-url="{{ url('json_active_cases') }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-active" height="180" data-url="{{ url('json_active_cases') }}"></canvas>
                     </div>
                 </div>
 
@@ -155,7 +160,7 @@
                 <h4 class="font-weight-bold text-center">{% trans %}New cases by day{% endtrans %}</h4>
                 <div class="row mb-5">
                     <div class="col-12 col-lg-10 offset-lg-1">
-                        <canvas id="chart-new-daily" height="180" data-url="{{ url('json_new_daily') }}"></canvas>
+                        <canvas class="chart-canvas" id="chart-new-daily" height="180" data-url="{{ url('json_new_daily') }}"></canvas>
                     </div>
                 </div>
             {% else %}
