@@ -1,4 +1,4 @@
-require('imports-loader?define=>false,this=>window!datatables.net')(window, $)
+require('imports-loader?define=>false,this=>window!datatables.net')(window, $);
 
 import '../scss/countries.scss';
 
