@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Dashboard{% endtrans %}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('dashboard') }}
+{% endblock %}
+
+{% block style %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('dashboard') }}
+{% endblock style %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+
+            <h2 class="col-12 font-weight-bold text-center">{% trans %}Top 5 countries{% endtrans %}</h2>
+
+            <hr>
+
+            {% if top_countries is not null %}
+                {% include 'inc/countries-top.html.twig' with {'top_countries': top_countries} %}
+            {% else %}
+                <div class="alert alert-danger text-center">{% trans %}Sorry, no data available{% endtrans %}</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

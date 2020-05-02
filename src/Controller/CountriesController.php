@@ -27,14 +27,14 @@ class CountriesController extends AbstractController
         $countryCases = $countryCaseRepository->getAllCounries($lastRecord->getDailyDate());
         $lastUpdateDate = $countryRepository->getLastUpdateAt();
 
-        return $this->render('main/countries.html.twig', [
+        return $this->render('countries/countries.html.twig', [
             'last_update_date' => $lastUpdateDate,
             'country_cases' => $countryCases,
         ]);
     }
 
     /**
-     * @Route("/countries/{country_name}", name="main_country_view", requirements={"country_name"="[\w\s.-]+"})
+     * @Route("/countries/view/{country_name}", name="countries_view", requirements={"country_name"="[\w\s.-]+"})
      *
      * @ParamConverter("country", class="App\Entity\Country", options={"mapping": {"country_name" = "name"} })
      *
@@ -49,10 +49,26 @@ class CountriesController extends AbstractController
         $prevRecord = $countryCaseRepository->getCasesPrevDay($countryCase);
 
 
-        return $this->render('main/country.html.twig', [
+        return $this->render('countries/country.html.twig', [
             'country_case' => $countryCase,
             'country_name' => $countryCase->getCountry()->getName(),
             'prev_record' => $prevRecord,
+        ]);
+    }
+
+
+    /**
+     * @Route("/countries/top-5", name="countries_top5")
+     *
+     * @param CountryCaseRepository $countryCaseRepository
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function countriesTop5(CountryCaseRepository $countryCaseRepository)
+    {
+        $topCountries = $countryCaseRepository->getTopCountries();
+
+        return $this->render('inc/top5.html.twig', [
+            'top_countries' => $topCountries,
         ]);
     }
 

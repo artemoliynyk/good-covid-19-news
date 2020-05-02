@@ -289,6 +289,26 @@
         <source>meta_description</source>
         <target>Positive statistic about COVID-19 pandemic</target>
       </trans-unit>
+      <trans-unit id="sr0GuZn" resname="All countries">
+        <source>All countries</source>
+        <target>All countries</target>
+      </trans-unit>
+      <trans-unit id="n64nRVM" resname="Top 5 countries">
+        <source>Top 5 countries</source>
+        <target>Top 5 countries</target>
+      </trans-unit>
+      <trans-unit id="i3z3u_f" resname="Top active cases">
+        <source>Top active cases</source>
+        <target>Top active cases</target>
+      </trans-unit>
+      <trans-unit id="RRxXhwC" resname="Top total recovered">
+        <source>Top total recovered</source>
+        <target>Top total recovered</target>
+      </trans-unit>
+      <trans-unit id="A.WM4IF" resname="Top recovered today">
+        <source>Top recovered today</source>
+        <target>Top recovered today</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
