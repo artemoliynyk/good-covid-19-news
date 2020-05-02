@@ -75,7 +75,9 @@ class StatisticsService
 
             // also update last records
             $lastRecords = $this->repoCountryCase->getLastByCountryWithChange($country);
-            array_push($noDataRecords, $lastRecords);
+            if ($lastRecords instanceof CountryCase) {
+                array_push($noDataRecords, $lastRecords);
+            }
             $processCases = array_unique($noDataRecords);
 
             if (!empty($processCases)) {
@@ -90,9 +92,9 @@ class StatisticsService
                         $recoveredChange = ($dailyChange >= 0 ? $dailyChange : 0);
                     }
                     $noDataDay->setNewRecovered($recoveredChange);
-
-                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getCaseDate()->format(StatisticsService::DATE_FORMAT)} since {$prevDay->getCaseDate()->format(StatisticsService::DATE_FORMAT)}: {$recoveredChange} staged");
                     $this->em->persist($noDataDay);
+
+                    $this->logger->info("{$country->getName()} recovered change for {$noDataDay->getCaseDate()->format(StatisticsService::DATE_FORMAT)}: {$recoveredChange} staged");
                 }
 
                 try {
@@ -131,7 +133,9 @@ class StatisticsService
 
             // also update last records
             $lastRecord = $this->repoCountryCase->getLastByCountryWithChange($country);
-            array_push($casesWithoutChange, $lastRecord);
+            if ($lastRecord instanceof CountryCase) {
+                array_push($casesWithoutChange, $lastRecord);
+            }
             $processCases = array_unique($casesWithoutChange);
 
             /** @var CountryCase $currentDay */
@@ -210,7 +214,9 @@ class StatisticsService
 
         // add current day
         $lastDay = $this->repoDailyStat->getLastRecord();
-        array_push($noChangeDays, $lastDay);
+        if ($lastDay instanceof DailyStat) {
+            array_push($noChangeDays, $lastDay);
+        }
         $processDays = array_unique($noChangeDays);
 
         /** @var DailyStat $currentDay */
@@ -231,7 +237,6 @@ class StatisticsService
             try {
                 $this->em->persist($currentDay);
                 $this->em->flush();
-//                $this->em->clear();
 
                 $this->logger->info("Daily total for {$currentDate->format(StatisticsService::DATE_FORMAT)} SAVED!\n");
             } catch (\Exception $exception) {
@@ -251,7 +256,9 @@ class StatisticsService
 
         // add current day
         $lastDay = $this->repoDailyStat->getLastRecord();
-        array_push($noChangeDays, $lastDay);
+        if ($lastDay instanceof DailyStat) {
+            array_push($noChangeDays, $lastDay);
+        }
         $processDays = array_unique($noChangeDays);
 
         /** @var DailyStat $currentDay */
