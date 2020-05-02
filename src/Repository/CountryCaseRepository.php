@@ -219,8 +219,8 @@ class CountryCaseRepository extends ServiceEntityRepository
         $qb->select('cc')
             ->orderBy('cc.caseDate', 'desc')
             ->addOrderBy('cc.active', 'desc')
-            ->setMaxResults($limit);
-        ;
+            ->setMaxResults($limit)
+        ;;
 
         return $qb->getQuery()->getResult();
     }
@@ -236,8 +236,8 @@ class CountryCaseRepository extends ServiceEntityRepository
         $qb->select('cc')
             ->orderBy('cc.caseDate', 'desc')
             ->addOrderBy('cc.recovered', 'desc')
-            ->setMaxResults($limit);
-        ;
+            ->setMaxResults($limit)
+        ;;
 
         return $qb->getQuery()->getResult();
     }
@@ -253,9 +253,20 @@ class CountryCaseRepository extends ServiceEntityRepository
         $qb->select('cc')
             ->orderBy('cc.caseDate', 'desc')
             ->addOrderBy('cc.newRecovered', 'desc')
-            ->setMaxResults($limit);
-        ;
+            ->setMaxResults($limit)
+        ;;
 
         return $qb->getQuery()->getResult();
+    }
+
+    public function getTopCountries()
+    {
+        $topCountries = [
+            'active' => $this->getTopActive(),
+            'recovered' => $this->getTopRecovered(),
+            'new_recovered' => $this->getTopNewRecovered(),
+        ];
+
+        return $topCountries;
     }
 }

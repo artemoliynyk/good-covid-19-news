@@ -25,13 +25,22 @@
             <div class="collapse navbar-collapse" id="mainMenu">
                 <ul class="navbar-nav mr-auto text-right">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('index') }}">{% trans %}Dashboard{% endtrans %}</a>
+                        <a class="nav-link" href="{{ url('index') }}">{% trans %}Dashboard{% endtrans %}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('main_countries') }}">{% trans %}Countries{% endtrans %}</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {% trans %}Countries{% endtrans %}
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="nab-countries">
+                            <a class="dropdown-item" href="{{ url('countries_index') }}">{% trans %}All countries{% endtrans %}</a>
+                            <a class="dropdown-item" href="{{ url('static_help') }}">{% trans %}Top 5 countries{% endtrans %}</a>
+                        </div>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url('static_disclaimer') }}">{% trans %}Disclaimer{% endtrans %}</a>
+                        <a class="nav-link" href="{{ url('static_disclaimer') }}">{% trans %}Disclaimer{% endtrans %}</a>
                     </li>
 
                     <li class="nav-item dropdown">

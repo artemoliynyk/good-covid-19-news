@@ -1,0 +1,52 @@
+<div id="top-countries" class="row mb-5">
+    <h4 class="col-12 font-weight-bold text-center">{% trans %}Top 5 countries{% endtrans %}</h4>
+
+    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+        <div class="card">
+            <div class="card-header text-center bg-danger text-white"><b>{% trans %}Top active cases{% endtrans %}</b></div>
+            <div class="card-body text-danger">
+                <table class="table table-sm">
+                    {% for case in top_countries.active %}
+                        <tr>
+                            <td class="w-50">{{ case.country.name }}</td>
+                            <td>{{ case.active|number }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+        <div class="card">
+            <div class="card-header text-center bg-success text-dark"><b>{% trans %}Top total recovered{% endtrans %}</b></div>
+            <div class="card-body text-success">
+                <table class="table table-sm">
+                    {% for case in top_countries.recovered %}
+                        <tr>
+                            <td class="w-50">{{ case.country.name }}</td>
+                            <td>{{ case.recovered|number }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-10 offset-1 mb-4 col-lg-4 offset-lg-0">
+        <div class="card">
+            <div class="card-header text-center bg-primary text-dark"><b>{% trans %}Top recovered today{% endtrans %}</b></div>
+            <div class="card-body text-primary">
+                <table class="table table-sm">
+                    {% for case in top_countries.new_recovered %}
+                        <tr>
+                            <td class="w-50">{{ case.country.name }}</td>
+                            <td>{{ case.newRecovered|number_signed }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
