@@ -34,7 +34,22 @@ class CountriesController extends AbstractController
     }
 
     /**
-     * @Route("/countries/view/{country_name}", name="countries_view", requirements={"country_name"="[\w\s.-]+"})
+     * @Route("/countries/top-5", name="countries_top5")
+     *
+     * @param CountryCaseRepository $countryCaseRepository
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function countriesTop5(CountryCaseRepository $countryCaseRepository)
+    {
+        $topCountries = $countryCaseRepository->getTopCountries();
+
+        return $this->render('inc/top5.html.twig', [
+            'top_countries' => $topCountries,
+        ]);
+    }
+
+    /**
+     * @Route("/countries/{country_name}", name="countries_view", requirements={"country_name"="[\w\s.-]+"})
      *
      * @ParamConverter("country", class="App\Entity\Country", options={"mapping": {"country_name" = "name"} })
      *
@@ -53,22 +68,6 @@ class CountriesController extends AbstractController
             'country_case' => $countryCase,
             'country_name' => $countryCase->getCountry()->getName(),
             'prev_record' => $prevRecord,
-        ]);
-    }
-
-
-    /**
-     * @Route("/countries/top-5", name="countries_top5")
-     *
-     * @param CountryCaseRepository $countryCaseRepository
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function countriesTop5(CountryCaseRepository $countryCaseRepository)
-    {
-        $topCountries = $countryCaseRepository->getTopCountries();
-
-        return $this->render('inc/top5.html.twig', [
-            'top_countries' => $topCountries,
         ]);
     }
 
