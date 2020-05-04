@@ -4,7 +4,7 @@ controllers:
     prefix: /{_locale}
     requirements:
         # must conform with supported_locales parameters
-        _locale: en|uk
+        _locale: en|uk|ru
 
 front:
     resource: ../../src/Controller/FrontController.php
