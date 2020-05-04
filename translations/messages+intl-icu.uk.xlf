@@ -293,7 +293,7 @@
         <source>All countries</source>
         <target>Всі країни</target>
       </trans-unit>
-      <trans-unit id="n64nRVM" resname="Top 5 countries on {top_date}">
+      <trans-unit id="0ckXZ9d" resname="Top 5 countries on {top_date}">
         <source>Top 5 countries on {top_date}</source>
         <target>Топ 5 країн на {top_date, date, long}</target>
       </trans-unit>
@@ -308,6 +308,10 @@
       <trans-unit id="A.WM4IF" resname="Top recovered today">
         <source>Top recovered today</source>
         <target>Топ одужавших за день</target>
+      </trans-unit>
+      <trans-unit id="n64nRVM" resname="Top 5 countries">
+        <source>Top 5 countries</source>
+        <target>Топ 5 країн</target>
       </trans-unit>
     </body>
   </file>
