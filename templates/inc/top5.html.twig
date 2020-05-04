@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col">
 
-            <h2 class="col-12 font-weight-bold text-center">{% trans %}Top 5 countries{% endtrans %}</h2>
+            <h2 class="col-12 font-weight-bold text-center">{% trans with {'top_date': last_update_date} %}Top 5 countries on {top_date}{% endtrans %}</h2>
 
             <hr>
 

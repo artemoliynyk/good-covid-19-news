@@ -39,12 +39,14 @@ class CountriesController extends AbstractController
      * @param CountryCaseRepository $countryCaseRepository
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function countriesTop5(CountryCaseRepository $countryCaseRepository)
+    public function countriesTop5(CountryCaseRepository $countryCaseRepository,DailyStatRepository $dailyStatRepository)
     {
         $topCountries = $countryCaseRepository->getTopCountries();
+        $lastRecord = $dailyStatRepository->getLastRecord();
 
         return $this->render('inc/top5.html.twig', [
             'top_countries' => $topCountries,
+            'last_update_date' => $lastRecord->getDailyDate(),
         ]);
     }
 

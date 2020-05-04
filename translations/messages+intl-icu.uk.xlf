@@ -293,9 +293,9 @@
         <source>All countries</source>
         <target>Всі країни</target>
       </trans-unit>
-      <trans-unit id="n64nRVM" resname="Top 5 countries">
-        <source>Top 5 countries</source>
-        <target>Топ 5 країн</target>
+      <trans-unit id="n64nRVM" resname="Top 5 countries on {top_date}">
+        <source>Top 5 countries on {top_date}</source>
+        <target>Топ 5 країн на {top_date, date, long}</target>
       </trans-unit>
       <trans-unit id="i3z3u_f" resname="Top active cases">
         <source>Top active cases</source>
