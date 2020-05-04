@@ -99,7 +99,7 @@
       </trans-unit>
       <trans-unit id="mSUvbFD" resname="People can still get infected and die every day! Keep safe and stay home!">
         <source>People can still get infected and die every day! Keep safe and stay home!</source>
-        <target>Люди все ж можуть захворіти і помирають щодня! Будьте в безпеці, залишайтесь вдома!</target>
+        <target>Люди все ж можуть захворіти і помирають щодня! Будьте в обережні, залишайтесь вдома!</target>
       </trans-unit>
       <trans-unit id="JP.te9I" resname="Contact me">
         <source>Contact me</source>
@@ -123,7 +123,7 @@
       </trans-unit>
       <trans-unit id="ZzNfFeM" resname="I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.">
         <source>I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.</source>
-        <target>Я вирішив створити цей цей, щоб сфокусуватись на позитивній динаміці по пандемії COVID-19.</target>
+        <target>Я вирішив створити цей сайт, щоб сфокусуватись на позитивній динаміці по пандемії COVID-19.</target>
       </trans-unit>
       <trans-unit id="WTHwvde" resname="During this hard and scary time it would be great to focus on something good, even if it is not much good.">
         <source>During this hard and scary time it would be great to focus on something good, even if it is not much good.</source>
@@ -163,7 +163,7 @@
       </trans-unit>
       <trans-unit id="lX3SJuC" resname="Less new cases than on">
         <source>Less new cases than on</source>
-        <target>Менеше нових випадків ніж</target>
+        <target>Менше нових випадків ніж</target>
       </trans-unit>
       <trans-unit id="c.W4B4E" resname="No positive dynamic">
         <source>No positive dynamic</source>
@@ -215,7 +215,7 @@
       </trans-unit>
       <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
         <source>Site use cookies and other essential web technologies.</source>
-        <target>Сайт використовує cooki та інші основні веб технології</target>
+        <target>Сайт використовує cookies та інші основні веб технології</target>
       </trans-unit>
       <trans-unit id="pP5lJk7" resname="Language">
         <source>Language</source>
@@ -267,7 +267,7 @@
       </trans-unit>
       <trans-unit id="JYakapm" resname="Less new cases than on&lt;br&gt;{change_date}">
         <source>Less new cases than on&lt;br&gt;{change_date}</source>
-        <target><![CDATA[Менеше нових випадків ніж<br>{change_date, date, medium}]]></target>
+        <target><![CDATA[Менше нових випадків ніж<br>{change_date, date, medium}]]></target>
       </trans-unit>
       <trans-unit id="a7lCTXb" resname="More recovered than on&lt;br&gt;{change_date}">
         <source>More recovered than on&lt;br&gt;{change_date}</source>

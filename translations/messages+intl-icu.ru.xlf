@@ -8,87 +8,87 @@
 
             <trans-unit id="z4hixfA" resname="Active cases">
                 <source>Active cases</source>
-                <target>Активні випадки</target>
+                <target>Активные случаи</target>
             </trans-unit>
             <trans-unit id="ZxFBiCc" resname="World population">
                 <source>World population</source>
-                <target>Населення планети</target>
+                <target>Население планеты</target>
             </trans-unit>
             <trans-unit id="N84Kke4" resname="Recovered">
                 <source>Recovered</source>
-                <target>Видужали</target>
+                <target>Выздоровели</target>
             </trans-unit>
             <trans-unit id="SrCelQa" resname="New infected">
                 <source>New infected</source>
-                <target>Нові зараження</target>
+                <target>Новые заражения</target>
             </trans-unit>
             <trans-unit id="waCGJlY" resname="New recovered">
                 <source>New recovered</source>
-                <target>Нові одужавші</target>
+                <target>Новые выздоровевшие</target>
             </trans-unit>
             <trans-unit id="Z7aWRoY" resname="Dashboard">
                 <source>Dashboard</source>
-                <target>Головна</target>
+                <target>Главная</target>
             </trans-unit>
             <trans-unit id="Epxnj85" resname="Disclaimer">
                 <source>Disclaimer</source>
-                <target>Попередження</target>
+                <target>Предупреждение</target>
             </trans-unit>
             <trans-unit id="Tvyg0Qx" resname="About">
                 <source>About</source>
-                <target>Про проект</target>
+                <target>О проекте</target>
             </trans-unit>
             <trans-unit id="60ezuaD" resname="Help project">
                 <source>Help project</source>
-                <target>Допомогти проекту</target>
+                <target>Помочь проекту</target>
             </trans-unit>
             <trans-unit id="emWLRn4" resname="Hi! I believe you can help the project.">
                 <source>Hi! I believe you can help the project.</source>
-                <target>Привіт! Я думаю ви можете допомогти проекту!</target>
+                <target>Здравствуйте! Я думаю вы можете помочь проекту!</target>
             </trans-unit>
             <trans-unit id="bqDg_Ae" resname="If you are PHP developer, designer, translator or speak multiple languages – you can help me!">
                 <source>If you are PHP developer, designer, translator or speak multiple languages – you can help me!</source>
-                <target>Якщо ви PHP-розробник, дизайнер, перекладач чи розмовляєте кількома мовами – ви можете допомогти мені!</target>
+                <target>Если вы PHP-разработчик, дизайнер, переводчик или разговариваете на нескольких языках - вы можете помочь мне!</target>
             </trans-unit>
             <trans-unit id="TTXqIbM" resname="How can I help?">
                 <source>How can I help?</source>
-                <target>Як я можу допомогти?</target>
+                <target>Как я могу помочь?</target>
             </trans-unit>
             <trans-unit id="Q3a7R2K" resname="You can help with one of the following things:">
                 <source>You can help with one of the following things:</source>
-                <target>Ви можете допомогти з наступними речами:</target>
+                <target>Вы можете помочь со следующими вещами:</target>
             </trans-unit>
             <trans-unit id="eCpMwRu" resname="translate project and verify translations">
                 <source>translate project and verify translations</source>
-                <target>перекласти проекти чи перевірити переклад</target>
+                <target>перевести проект или проверить перевод</target>
             </trans-unit>
             <trans-unit id="1xGbcgw" resname="create new features">
                 <source>create new features</source>
-                <target>новий функціонал</target>
+                <target>новый функционал</target>
             </trans-unit>
             <trans-unit id="ZWp1IZg" resname="fix code">
                 <source>fix code</source>
-                <target>фікси коду</target>
+                <target>фиксы кода</target>
             </trans-unit>
             <trans-unit id="AuQ2Z6A" resname="fix site layout">
                 <source>fix site layout</source>
-                <target>виправлення дизайну</target>
+                <target>исправления дизайна</target>
             </trans-unit>
             <trans-unit id="pmBb.zo" resname="Get onboard!">
                 <source>Get onboard!</source>
-                <target>Приєднуйся!</target>
+                <target>Присоединяйся!</target>
             </trans-unit>
             <trans-unit id="J.qsUJ6" resname="Ready to contribute? – Check out project's">
                 <source>Ready to contribute? – Check out project's</source>
-                <target>Готові? – Дивіться сторінку проекту на</target>
+                <target>Готовы? - Смотрите страницу проекта на</target>
             </trans-unit>
             <trans-unit id="ARpP2ga" resname="Want to share ideas or discuss projet? – Join chat chanel on">
                 <source>Want to share ideas or discuss projet? – Join chat chanel on</source>
-                <target>Хочете обсудити проект чи поділитись ідеями? – Приєднуйтесь до чату (англійською) в</target>
+                <target>Хотите обсудить проект или поделиться идеями? - Присоединяйтесь к чату (на английском) в</target>
             </trans-unit>
             <trans-unit id="4_TT_Ss" resname="All information on this site obtained from a free public API">
                 <source>All information on this site obtained from a free public API</source>
-                <target>Всю інформацію на цьому сайту було отримано з відкритих безкоштовних API</target>
+                <target>Вся информация на этом сайте была получена из открытых бесплатных API</target>
             </trans-unit>
             <trans-unit id="Gvs09YU" resname="RapidAPI Coronavirus monitor">
                 <source>RapidAPI Coronavirus monitor</source>
@@ -96,171 +96,171 @@
             </trans-unit>
             <trans-unit id="AaZZaF8" resname="This is not an official WHO/CDC data.">
                 <source>This is not an official WHO/CDC data.</source>
-                <target>Це не офіційна статистика ВООЗ/МОЗ.</target>
+                <target>Это не официальная статистика ВОЗ / Минздрав.</target>
             </trans-unit>
             <trans-unit id="mSUvbFD" resname="People can still get infected and die every day! Keep safe and stay home!">
                 <source>People can still get infected and die every day! Keep safe and stay home!</source>
-                <target>Люди все ж можуть захворіти і помирають щодня! Будьте в безпеці, залишайтесь вдома!</target>
+                <target>Люди все могут заболеть и умирают каждый день! Будьте в осторожны, оставайтесь дома!</target>
             </trans-unit>
             <trans-unit id="JP.te9I" resname="Contact me">
                 <source>Contact me</source>
-                <target>Зв'яжіться зі мною</target>
+                <target>Свяжитесь со мной</target>
             </trans-unit>
             <trans-unit id="8IXuhlc" resname="Go to dashboard">
                 <source>Go to dashboard</source>
-                <target>Повернутись на головну</target>
+                <target>Вернуться на главную</target>
             </trans-unit>
             <trans-unit id="q1nCTvO" resname="About project">
                 <source>About project</source>
-                <target>Про проект</target>
+                <target>О проекте</target>
             </trans-unit>
             <trans-unit id="6RsWrn8" resname="Hello, my name is Artem and I'm a web developer.">
                 <source>Hello, my name is Artem and I'm a web developer.</source>
-                <target>Вітаю! Мене звати Артем, я веб-розробник.</target>
+                <target>Приветствую! Меня зовут Артем, я веб-разработчик.</target>
             </trans-unit>
             <trans-unit id="wOlZNQq" resname="As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.">
                 <source>As many of us I'm on quarantine and have a plenty of time. Including time to overthink the situation.</source>
-                <target>Я, як і більшість з нас, сиджу на карантині і маю багато часу. В тому числі часу обдумувати і переживати за ситуацію.</target>
+                <target>Я, как и большинство из нас, сижу на карантине и у меня много времени. В том числе времени думать и переживать за ситуацию.</target>
             </trans-unit>
             <trans-unit id="ZzNfFeM" resname="I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.">
                 <source>I decided to create this site to focus on the positive dynamic of the COVID-19 pandemic.</source>
-                <target>Я вирішив створити цей цей, щоб сфокусуватись на позитивній динаміці по пандемії COVID-19.</target>
+                <target>Я решил создать этот, чтобы сфокусироваться на положительной динамике по пандемии COVID-19.</target>
             </trans-unit>
             <trans-unit id="WTHwvde" resname="During this hard and scary time it would be great to focus on something good, even if it is not much good.">
                 <source>During this hard and scary time it would be great to focus on something good, even if it is not much good.</source>
-                <target>В цей важкі і страшний час було б дуже добре сфокусуватися на чомусь хорошому, навіть якщо не так багато хорошого.</target>
+                <target>В это тяжелое и страшное время было бы очень хорошо сфокусироваться на чем-то хорошем, даже если хорошего не так много .</target>
             </trans-unit>
             <trans-unit id="SZqBEm1" resname="You can help me to make site better, please check">
                 <source>You can help me to make site better, please check</source>
-                <target>Ви можете допомогти мені зробити сайт краще – переглянте, будь ласка,</target>
+                <target>Вы можете помочь мне сделать сайт лучше - смотрите, пожалуйста,</target>
             </trans-unit>
             <trans-unit id="J26tL9l" resname="Help us page">
                 <source>Help us page</source>
-                <target>сторінку "Допомогти проекту"</target>
+                <target>страницу "Помочь проекту"</target>
             </trans-unit>
             <trans-unit id="uAkd3xK" resname="Pandemic data for {last_date}">
                 <source>Pandemic data for {last_date}</source>
-                <target>Дані по пандемії на {last_date, date, long}</target>
+                <target>Данные по пандемии на {last_date, date, long}</target>
             </trans-unit>
             <trans-unit id="JJIVcZ4" resname="Estimated world population on 2020 – {population}">
                 <source>Estimated world population on 2020 – {population}</source>
-                <target>Оцінка населення планети на 2020 рік – {population}</target>
+                <target>Оценка населения планеты на 2020 год - {population}</target>
             </trans-unit>
             <trans-unit id="4gmfxNG" resname="it's just {percent}% of the world population">
                 <source>it's just {percent}% of the world population</source>
-                <target>Це всього {percent}% населення планети</target>
+                <target>это всего {percent}% населения планеты</target>
             </trans-unit>
             <trans-unit id="n7Nb36l" resname="Total recovered">
                 <source>Total recovered</source>
-                <target>Всього видужали</target>
+                <target>Всего выздоровели</target>
             </trans-unit>
             <trans-unit id="2gli5mv" resname="Daily change">
                 <source>Daily change</source>
-                <target>Зміни за добу</target>
+                <target>Изменения в сутки</target>
             </trans-unit>
             <trans-unit id="abkwgMm" resname="New cases">
                 <source>New cases</source>
-                <target>Нові випадки</target>
+                <target>Новые случаи</target>
             </trans-unit>
             <trans-unit id="lX3SJuC" resname="Less new cases than on">
                 <source>Less new cases than on</source>
-                <target>Менеше нових випадків ніж</target>
+                <target>Меньше новых случаев чем</target>
             </trans-unit>
             <trans-unit id="c.W4B4E" resname="No positive dynamic">
                 <source>No positive dynamic</source>
-                <target>Нема позитивних змін</target>
+                <target>Нету положительных изменений</target>
             </trans-unit>
             <trans-unit id="ZOc40yk" resname="Daily recovered">
                 <source>Daily recovered</source>
-                <target>Видужали за день</target>
+                <target>Выздоровели за день</target>
             </trans-unit>
             <trans-unit id="ggppOnl" resname="More recovered than on">
                 <source>More recovered than on</source>
-                <target>Більше одужавших ніж</target>
+                <target>Больше выздоровевших чем</target>
             </trans-unit>
             <trans-unit id="opNMxJF" resname="Serious cases">
                 <source>Serious cases</source>
-                <target>Важкі випадки</target>
+                <target>Тяжелые случаи</target>
             </trans-unit>
             <trans-unit id="3X3hmHN" resname="Less serious than on">
                 <source>Less serious than on</source>
-                <target>Менше важких ніж</target>
+                <target>Меньше тяжелых чем</target>
             </trans-unit>
             <trans-unit id=".Nb_py3" resname="Death">
                 <source>Death</source>
-                <target>Смерті</target>
+                <target>Смерти</target>
             </trans-unit>
             <trans-unit id="4988NnE" resname="Less died than on">
                 <source>Less died than on</source>
-                <target>Менше смертей ніж</target>
+                <target>Меньше смертей чем</target>
             </trans-unit>
             <trans-unit id="j0agZlm" resname="Recovered total">
                 <source>Recovered total</source>
-                <target>Всього видужало</target>
+                <target>Всего выздоровел</target>
             </trans-unit>
             <trans-unit id="hd9XLRu" resname="Recovered by day">
                 <source>Recovered by day</source>
-                <target>Одужавші по днях</target>
+                <target>Выздоровели по дням</target>
             </trans-unit>
             <trans-unit id="YPtZKnl" resname="New cases by day">
                 <source>New cases by day</source>
-                <target>Нові випадки по днях</target>
+                <target>Новые случаи по дням</target>
             </trans-unit>
             <trans-unit id="RG9Ni7y" resname="Sorry, something goes wrong with the site">
                 <source>Sorry, something goes wrong with the site</source>
-                <target>Вибачаємось, щось пішло не так</target>
+                <target>Извените, что-то пошло не так</target>
             </trans-unit>
             <trans-unit id="E72_T65" resname="We detected your browser language, you can change in in top right corner">
                 <source>We detected your browser language, you can change in in top right corner</source>
-                <target>Ми визначили мову вашого браузера, але ви можете змінити мову в меню праворуч</target>
+                <target>Мы определили язык вашего браузера, но вы можете изменить язык в меню справа</target>
             </trans-unit>
             <trans-unit id="KoYmf8d" resname="Site use cookies and other essential web technologies.">
                 <source>Site use cookies and other essential web technologies.</source>
-                <target>Сайт використовує cooki та інші основні веб технології</target>
+                <target>Сайт использует cookies и другие основные веб технологии</target>
             </trans-unit>
             <trans-unit id="pP5lJk7" resname="Language">
                 <source>Language</source>
-                <target>Мова</target>
+                <target>Язык</target>
             </trans-unit>
             <trans-unit id="bfgsSTB" resname="Important notice!">
                 <source>Important notice!</source>
-                <target>Важлива інформація!</target>
+                <target>Важная информация!</target>
             </trans-unit>
             <trans-unit id="j69_x6s" resname="Countries">
                 <source>Countries</source>
-                <target>Країни</target>
+                <target>Страны</target>
             </trans-unit>
             <trans-unit id="ScJmuqq" resname="Search">
                 <source>Search</source>
-                <target>Пошук</target>
+                <target>Поиск</target>
             </trans-unit>
             <trans-unit id="cB0CHQj" resname="Country">
                 <source>Country</source>
-                <target>Країна</target>
+                <target>Страна</target>
             </trans-unit>
             <trans-unit id="kjQGlYm" resname="Active">
                 <source>Active</source>
-                <target>Хворі</target>
+                <target>Больные</target>
             </trans-unit>
             <trans-unit id="GP3VSbL" resname="New">
                 <source>New</source>
-                <target>Нові</target>
+                <target>Новые</target>
             </trans-unit>
             <trans-unit id="wXPaLCp" resname="Serious">
                 <source>Serious</source>
-                <target>Важкі</target>
+                <target>Тяжелые</target>
             </trans-unit>
             <trans-unit id="kQwULcO" resname="Sorry, no data available">
                 <source>Sorry, no data available</source>
-                <target>Вибачте, немає даних</target>
+                <target>Извините, нет данных</target>
             </trans-unit>
             <trans-unit id="Rqne0qF" resname="Recovered&lt;br&gt;dynamic">
                 <source>Recovered&lt;br&gt;dynamic</source>
-                <target><![CDATA[Динаміка<br>видужання]]></target>
+                <target><![CDATA[Динамика <br>выздоровления]]></target>
             </trans-unit>
             <trans-unit id="M0EVFYk" resname="Death&lt;br&gt;dynamic">
                 <source>Death&lt;br&gt;dynamic</source>
-                <target><![CDATA[Динаміка<br>смертей]]></target>
+                <target><![CDATA[Динамика <br>смертей]]></target>
             </trans-unit>
             <trans-unit id="4veeW2A" resname="N/A">
                 <source>N/A</source>
@@ -268,19 +268,19 @@
             </trans-unit>
             <trans-unit id="JYakapm" resname="Less new cases than on&lt;br&gt;{change_date}">
                 <source>Less new cases than on&lt;br&gt;{change_date}</source>
-                <target><![CDATA[Менеше нових випадків ніж<br>{change_date, date, medium}]]></target>
+                <target><![CDATA[Меньше новых случаев чем <br>{change_date, date, medium}]]></target>
             </trans-unit>
             <trans-unit id="a7lCTXb" resname="More recovered than on&lt;br&gt;{change_date}">
                 <source>More recovered than on&lt;br&gt;{change_date}</source>
-                <target><![CDATA[Більше одужавших ніж<br>{change_date, date, medium}]]></target>
+                <target><![CDATA[Более выздоровевших чем <br>{change_date, date, medium}]]></target>
             </trans-unit>
             <trans-unit id="pLw7TRL" resname="Less serious than on&lt;br&gt;{change_date}">
                 <source>Less serious than on&lt;br&gt;{change_date}</source>
-                <target><![CDATA[Менше важких ніж<br>{change_date, date, medium}]]></target>
+                <target><![CDATA[Меньше тяжелых чем <br>{change_date, date, medium}]]></target>
             </trans-unit>
             <trans-unit id="4Ul5Wdy" resname="Less died than on&lt;br&gt;{change_date}">
                 <source>Less died than on&lt;br&gt;{change_date}</source>
-                <target><![CDATA[Менше смертей ніж<br>{change_date, date, medium}]]></target>
+                <target><![CDATA[Меньше смертей чем <br>{change_date, date, medium}]]></target>
             </trans-unit>
             <trans-unit id="AfE9gcQ" resname="chart_date">
                 <source>chart_date</source>
@@ -288,31 +288,31 @@
             </trans-unit>
             <trans-unit id="qMn_z4L" resname="meta_description">
                 <source>meta_description</source>
-                <target>Позитивна статистика пандемії COVID-19</target>
+                <target>Положительная статистика пандемии COVID-19</target>
             </trans-unit>
             <trans-unit id="sr0GuZn" resname="All countries">
                 <source>All countries</source>
-                <target>Всі країни</target>
+                <target>Все страны</target>
             </trans-unit>
             <trans-unit id="0ckXZ9d" resname="Top 5 countries on {top_date}">
                 <source>Top 5 countries on {top_date}</source>
-                <target>Топ 5 країн на {top_date, date, long}</target>
+                <target>Топ 5 стран на {top_date, date, long}</target>
             </trans-unit>
             <trans-unit id="i3z3u_f" resname="Top active cases">
                 <source>Top active cases</source>
-                <target>Топ активних випадків</target>
+                <target>Топ активных случаев</target>
             </trans-unit>
             <trans-unit id="RRxXhwC" resname="Top total recovered">
                 <source>Top total recovered</source>
-                <target>Топ одужавших</target>
+                <target>Топ выздоровевших</target>
             </trans-unit>
             <trans-unit id="A.WM4IF" resname="Top recovered today">
                 <source>Top recovered today</source>
-                <target>Топ одужавших за день</target>
+                <target>Топ выздоровевших за день</target>
             </trans-unit>
             <trans-unit id="n64nRVM" resname="Top 5 countries">
                 <source>Top 5 countries</source>
-                <target>Топ 5 країн</target>
+                <target>Топ 5 стран</target>
             </trans-unit>
 
         </body>
