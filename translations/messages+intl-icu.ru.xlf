@@ -100,7 +100,7 @@
             </trans-unit>
             <trans-unit id="mSUvbFD" resname="People can still get infected and die every day! Keep safe and stay home!">
                 <source>People can still get infected and die every day! Keep safe and stay home!</source>
-                <target>Люди все могут заболеть и умирают каждый день! Будьте в осторожны, оставайтесь дома!</target>
+                <target>Люди все же могут заболеть и умирают каждый день! Будьте в осторожны, оставайтесь дома!</target>
             </trans-unit>
             <trans-unit id="JP.te9I" resname="Contact me">
                 <source>Contact me</source>
@@ -156,7 +156,7 @@
             </trans-unit>
             <trans-unit id="2gli5mv" resname="Daily change">
                 <source>Daily change</source>
-                <target>Изменения в сутки</target>
+                <target>Изменения за сутки</target>
             </trans-unit>
             <trans-unit id="abkwgMm" resname="New cases">
                 <source>New cases</source>
@@ -196,7 +196,7 @@
             </trans-unit>
             <trans-unit id="j0agZlm" resname="Recovered total">
                 <source>Recovered total</source>
-                <target>Всего выздоровел</target>
+                <target>Всего выздоровели</target>
             </trans-unit>
             <trans-unit id="hd9XLRu" resname="Recovered by day">
                 <source>Recovered by day</source>
@@ -272,7 +272,7 @@
             </trans-unit>
             <trans-unit id="a7lCTXb" resname="More recovered than on&lt;br&gt;{change_date}">
                 <source>More recovered than on&lt;br&gt;{change_date}</source>
-                <target><![CDATA[Более выздоровевших чем <br>{change_date, date, medium}]]></target>
+                <target><![CDATA[Больше выздоровевших чем <br>{change_date, date, medium}]]></target>
             </trans-unit>
             <trans-unit id="pLw7TRL" resname="Less serious than on&lt;br&gt;{change_date}">
                 <source>Less serious than on&lt;br&gt;{change_date}</source>
