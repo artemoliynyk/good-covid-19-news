@@ -255,7 +255,7 @@
       </trans-unit>
       <trans-unit id="M0EVFYk" resname="Death&lt;br&gt;dynamic">
         <source>Death&lt;br&gt;dynamic</source>
-        <target><![CDATA[__Death<br>dynamic]]></target>
+        <target><![CDATA[Death<br>dynamic]]></target>
       </trans-unit>
       <trans-unit id="wXPaLCp" resname="Serious">
         <source>Serious</source>
