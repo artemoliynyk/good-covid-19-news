@@ -19,6 +19,9 @@ class CountryRepository extends ServiceEntityRepository
         parent::__construct($registry, Country::class);
     }
 
+    /**
+     * @return Country[]
+     */
     public function getAllOrdered()
     {
         return $this->createQueryBuilder('c')->orderBy('c.name', 'ASC')->getQuery()->getResult();
