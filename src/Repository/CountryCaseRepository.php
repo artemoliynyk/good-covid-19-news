@@ -21,6 +21,24 @@ class CountryCaseRepository extends ServiceEntityRepository
         parent::__construct($registry, CountryCase::class);
     }
 
+    /**
+     * @param Country $country
+     * @return CountryCase[]
+     */
+    public function getAll(Country $country)
+    {
+        $qb = $this->createQueryBuilder('cc');
+
+        $qb->select('cc')
+            ->where('cc.country = :country')
+            ->orderBy('cc.caseDate', 'asc')
+            ->setParameter('country', $country)
+        ;
+
+        return $qb->getQuery()->getResult();
+
+    }
+
     public function getOldestByCountry(Country $country): ?CountryCase
     {
         $qb = $this->createQueryBuilder('cc');

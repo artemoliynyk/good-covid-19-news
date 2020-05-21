@@ -8,7 +8,7 @@ parameters:
     supported_locales: ['en', 'uk', 'ru']
 
 monolog:
-    channels: [covid, stats]
+    channels: [covid, stats, validation]
     handlers:
         covid:
             type: rotating_file
@@ -23,6 +23,13 @@ monolog:
             level: info
             max_files: 10
             channels: stats
+
+        validation:
+            type: rotating_file
+            path: "%kernel.logs_dir%/validation.log"
+            level: info
+            max_files: 10
+            channels: validation
 
 services:
     # default configuration for services in *this* file
