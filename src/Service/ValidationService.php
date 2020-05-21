@@ -65,48 +65,67 @@ class ValidationService
         foreach ($countries as $country) {
             $countryCases = $this->repoCountryCase->getAll($country);
 
-            /** @var CountryCase $previousCase */
-            $previousCase = null;
+            /** @var CountryCase $yesterday */
+            $yesterday = null;
+            $today = null;
 
             $checkFields = ['total', 'deaths', 'recovered'];
 
-            $changes = 0;
-            foreach ($countryCases as $countryCase) {
+            foreach ($countryCases as $tomorrow) {
 
-                if (!is_null($previousCase)) {
+                if ($yesterday && $today) {
 
                     foreach ($checkFields as $field) {
-                        $currentValue = $countryCase->{"get{$field}"}();
-                        $prevValue = $previousCase->{"get{$field}"}();
+                        $valueTomorrow = $tomorrow->{"get{$field}"}();
+                        $valueToday = $today->{"get{$field}"}();
+                        $valueYesterday = $yesterday->{"get{$field}"}();
 
-                        if ($prevValue > $currentValue) {
+                        // set today's value to yesterday's if today greater than tomorrow and greated than yesterday
+                        //
+                        if ($valueToday > $valueTomorrow && $valueYesterday < $valueToday) {
                             // Log data
-                            $logString = sprintf('Wrong %s data for %s %s / %s: %d vs. %d',
+                            $logString = sprintf('Wrong %s data for %s %s / %s: %d vs. %d – set to %d',
                                 $country->getName(),
                                 $field,
 
-                                $previousCase->getCaseDate()->format(StatisticsService::DATE_FORMAT),
-                                $countryCase->getCaseDate()->format(StatisticsService::DATE_FORMAT),
+                                $today->getCaseDate()->format(StatisticsService::DATE_FORMAT),
+                                $tomorrow->getCaseDate()->format(StatisticsService::DATE_FORMAT),
 
-                                $prevValue,
-                                $currentValue
+                                $valueToday,
+                                $valueTomorrow,
+                                $valueYesterday
                             );
                             $this->logger->info($logString);
 
+                            $logString = sprintf("Set value %d from %s\n",
+                                $valueYesterday,
+                                $yesterday->getCaseDate()->format(StatisticsService::DATE_FORMAT)
+                            );
+                            $this->logger->info($logString);
+
+
                             // update data, set current same as previous
-                            $countryCase->{"set{$field}"}($prevValue);
-                            $this->em->persist($countryCase);
-                            $changes++;
+                            $today->{"set{$field}"}($valueYesterday);
+                            $this->em->persist($today);
                         }
                     }
                 }
 
-                $previousCase = $countryCase;
-            }
 
-            if ($changes > 0) {
-                $this->em->flush();
+                if ($today) {
+                    $yesterday = $today;
+                }
+
+                $today = $tomorrow;
             }
+        }
+
+        try {
+            $this->em->flush();
+            $this->em->clear();
+        }
+        catch (\Exception $e) {
+            return false;
         }
 
         return true;
