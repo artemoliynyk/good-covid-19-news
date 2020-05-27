@@ -61,7 +61,6 @@ class ValidationService
     public function verifyCountryData()
     {
         $countries = $this->repoCountry->getAllOrdered();
-        $countries = $this->repoCountry->findBy(['id' => 1]);
 
         foreach ($countries as $country) {
             $countryCases = $this->repoCountryCase->getAll($country);
